@@ -21,7 +21,7 @@ site's flip wave is intentionally not used.
 
 - The four links (`LinkedIn`, `GitHub`, `Resume`, `Contact`): color change only, over `300ms`. No
   underline, translate, scale, or background.
-- Theme toggle: color change only, over `300ms`.
+- Theme toggle: color change only, over `300ms`. It shows the pointer cursor, like the links.
 - The name and experience rows have no hover state. The name keeps the default cursor.
 
 ## 3. Focus

@@ -57,7 +57,7 @@ export function ThemeToggle() {
 			type="button"
 			onClick={handleToggle}
 			aria-label="Toggle theme"
-			className="p-2 text-gray-600 transition-colors duration-300 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
+			className="cursor-pointer p-2 text-gray-600 transition-colors duration-300 hover:text-gray-900 dark:text-gray-400 dark:hover:text-gray-100"
 		>
 			<MoonIcon className="h-5 w-5 dark:hidden" />
 			<SunIcon className="hidden h-5 w-5 dark:block" />

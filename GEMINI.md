@@ -20,7 +20,7 @@ The name is static.
 - Fixed structure: four links (`LinkedIn`, `GitHub`, `Resume`, `Contact`), five experiences, one
   page. `Contact` is a same-tab `mailto:` link. Never print the email address as page text.
 - Mobile uses short company labels. Desktop uses full names. Keep both.
-- Dates read `2026 to Present`. No dashes.
+- Dates read `2026 - Present`, with a spaced hyphen. Never an em dash.
 - Education, skills, achievements, and highlights stay as data only.
 - Keep light and dark themes working. Nothing moves except the theme switch and hover colors.
 

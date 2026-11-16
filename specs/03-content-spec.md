@@ -55,16 +55,16 @@ Exactly four links, in this order, with these labels:
 ## 4. Experiences
 
 Newest first. The page shows year ranges only. The data keeps the full start and end dates. A range
-is written as two years joined by the word `to`, for example `2026 to Present`. Do not use dashes in
+is written as two years joined by a spaced hyphen, for example `2026 - Present`. Never use an em dash in
 dates.
 
 | # | Company (≥640px) | Mobile label (<640px) | Role | Display period | Full dates | Location | Logo |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Australian Bureau of Statistics | ABS | Graduate DevOps Engineer | 2026 to Present | 2026-02 to Present | Sydney, NSW | `abs` |
-| 2 | Australian Bureau of Statistics | ABS | Cadet, DevOps | 2025 to 2026 | 2025-03 to 2026-02 | Sydney, NSW | `abs` |
-| 3 | Commonwealth Bank of Australia | CommBank | Business Banking Associate | 2024 to 2025 | 2024-11 to 2025-06 | Redfern, NSW | `commbank` |
-| 4 | Service NSW | Service NSW | Customer & Digital Service Representative | 2023 to 2024 | 2023-03 to 2024-11 | Ryde, NSW | `service-nsw` |
-| 5 | McDonald's | McDonald's | Crew Member | 2019 to 2023 | 2019-08 to 2023-03 | Mount Colah, NSW | `mcdonalds` |
+| 1 | Australian Bureau of Statistics | ABS | Graduate DevOps Engineer | 2026 - Present | 2026-02 - Present | Sydney, NSW | `abs` |
+| 2 | Australian Bureau of Statistics | ABS | Cadet, DevOps | 2025 - 2026 | 2025-03 - 2026-02 | Sydney, NSW | `abs` |
+| 3 | Commonwealth Bank of Australia | CommBank | Business Banking Associate | 2024 - 2025 | 2024-11 - 2025-06 | Redfern, NSW | `commbank` |
+| 4 | Service NSW | Service NSW | Customer & Digital Service Representative | 2023 - 2024 | 2023-03 - 2024-11 | Ryde, NSW | `service-nsw` |
+| 5 | McDonald's | McDonald's | Crew Member | 2019 - 2023 | 2019-08 - 2023-03 | Mount Colah, NSW | `mcdonalds` |
 
 - `shortCompany` only keeps mobile rows at 48px. It does not replace the full company name in the
   data or on desktop.
@@ -79,7 +79,7 @@ These files keep Ali's resume data available for later. The page does not show t
 
 - `src/data/education.ts`: UTS Bachelor of Information Technology, WAM 82.58, GPA 6.21,
   Distinction, Enterprise Systems Development major, Networking and Cybersecurity sub-major,
-  2023 to 2025.
+  2023 - 2025.
 - `src/data/skills.ts`: operating systems, languages, cloud/DevOps, containers, tooling, home lab.
 - `src/data/achievements.ts`: 2nd in NSW IPT (2022 HSC) and an in-progress AWS certification.
 
@@ -129,7 +129,7 @@ Sitemap: `src/app/sitemap.ts` lists `https://www.alib.au/`. `public/robots.txt` 
 | `public/resume.pdf` | `Resume` link target | Ali's real resume; keep current. |
 | `public/favicon.svg` | Browser icon | Custom "A" mark, not from the reference site. |
 | `public/og.png` | Open Graph image | Made from Ali's name and role, 1200 × 630. Footer reads `alib.au`. |
-| `public/logos/abs.svg` | ABS employer mark | White reverse artwork on dark circle. |
+| `public/logos/abs.svg` | ABS employer mark | White artwork on a transparent background, used as a mask and filled with the text color. |
 | `public/logos/commbank.svg` | CommBank employer mark | Official diamond, grayscale in UI. |
 | `public/logos/service-nsw.svg` | Service NSW employer mark | Circular symbol, grayscale in UI. |
 | `public/logos/mcdonalds.svg` | McDonald's employer mark | Golden arches, grayscale in UI. |

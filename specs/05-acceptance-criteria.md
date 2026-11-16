@@ -32,8 +32,8 @@ device scale factor 1. Reference values come from the captures in `specs/referen
 - [ ] Each row is 48px tall with a 48px logo slot and a 16px gap to the text block.
 - [ ] Text block starts at `x=480`.
 - [ ] Desktop date is vertically centered against the company and role block and right-aligned.
-- [ ] Dates read `2026 to Present`, `2025 to 2026`, `2024 to 2025`, `2023 to 2024`, and
-      `2019 to 2023`, with no dashes.
+- [ ] Dates read `2026 - Present`, `2025 - 2026`, `2024 - 2025`, `2023 - 2024`, and
+      `2019 - 2023`.
 - [ ] Full company names are shown at this width.
 - [ ] There is no horizontal scrolling (`scrollWidth === 1440`).
 

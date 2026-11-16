@@ -130,7 +130,7 @@ type Experience = {
   location: string;
   startDate: string;  // ISO year-month
   endDate: string | "Present";
-  period: string;     // made by formatPeriod, e.g. "2026 to Present"
+  period: string;     // made by formatPeriod, e.g. "2026 - Present"
   logo: "abs" | "commbank" | "service-nsw" | "mcdonalds";
   highlights: readonly string[];
   skills: readonly string[];
@@ -140,7 +140,7 @@ type Experience = {
 Rules:
 
 - Derive `period` from the full dates with `formatPeriod`. Do not write a year range in a
-  component. The format is `2026 to Present` or `2025 to 2026`, with no dashes.
+  component. The format is `2026 - Present` or `2025 - 2026`.
 - Keep the five experiences newest first.
 - Add an experience by editing `src/data/experiences.ts` and adding a logo mapping only if a new
   employer appears. Do not add a projects array.

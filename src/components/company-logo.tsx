@@ -9,9 +9,22 @@ type CompanyLogoProps = {
 export function CompanyLogo({ kind }: CompanyLogoProps) {
 	if (kind === "abs") {
 		return (
-			<span className="flex h-9 w-9 items-center justify-center rounded-full bg-gray-900">
-				<Image src="/logos/abs.svg" alt="" width={26} height={23} className="h-[23px] w-[26px]" />
-			</span>
+			// The artwork has a transparent background. Used as a mask, it takes the text color of the
+			// current theme, so it stays readable on both the white and the black page.
+			<span
+				aria-hidden="true"
+				className="block h-8 w-9 bg-gray-900 transition-colors duration-300 dark:bg-gray-100"
+				style={{
+					maskImage: "url(/logos/abs.svg)",
+					WebkitMaskImage: "url(/logos/abs.svg)",
+					maskRepeat: "no-repeat",
+					WebkitMaskRepeat: "no-repeat",
+					maskPosition: "center",
+					WebkitMaskPosition: "center",
+					maskSize: "contain",
+					WebkitMaskSize: "contain",
+				}}
+			/>
 		);
 	}
 

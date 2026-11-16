@@ -19,7 +19,7 @@ list of experience rows. Match its spacing, typography, and light and dark palet
 - Keep exactly four links, in this order: `LinkedIn`, `GitHub`, `Resume`, `Contact`. `Contact` is a
   same-tab `mailto:` link. Never print the email address as page text.
 - Mobile shows short company labels (`ABS`, `CommBank`). Desktop shows full names.
-- Dates read `2026 to Present`. No dashes.
+- Dates read `2026 - Present`, with a spaced hyphen. Never an em dash.
 - Education, skills, achievements, and highlights stay as data only.
 
 ## Code conventions

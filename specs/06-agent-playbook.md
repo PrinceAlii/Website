@@ -30,7 +30,7 @@ If a request conflicts with these specs, point out the conflict. Do not pick a s
   extra links. These are product requirements, not style choices.
 - Keep the 672px column, 96px top padding, 48px header, 20px label, and 48px rows.
 - Keep the name a plain static `h1`. Keep the 300ms color transitions.
-- The page has no prose. Show names, labels, and dates only. Write dates as `2026 to Present`.
+- The page has no prose. Show names, labels, and dates only. Write dates as `2026 - Present`.
 - Never use em dashes.
 - Delete decoration before adding any. The reference works because of alignment and whitespace.
 - Use Ali's real content and employer marks only. Read `public/logos/SOURCES.md` before changing a
@@ -52,7 +52,7 @@ JSON-LD read it from here.
 Edit `src/data/experiences.ts`.
 
 - Keep the list newest first.
-- Keep full `startDate` and `endDate`, and make `period` with `formatPeriod` (`2026 to Present`).
+- Keep full `startDate` and `endDate`, and make `period` with `formatPeriod` (`2026 - Present`).
 - Set `shortCompany` for any company label too long to sit beside a mobile date. Test at 390px and
   320px.
 - Add a `LogoKind` and a `CompanyLogo` branch only for a real new employer; put the SVG in
@@ -151,7 +151,7 @@ Take your screenshot after the fonts load.
 - Do not add a UI component library, icon package, or animation library. The inline SVGs and
   employer SVGs are enough.
 - Do not replace the pixel name with a standard sans-serif.
-- Do not add prose to the page or write dates with dashes.
+- Do not add prose to the page. Write dates with a spaced hyphen, never an em dash.
 - Do not remove the mobile short company labels without retesting every row at 320px.
 - Do not commit generated output (`out/`, `.next/`, `node_modules/`).
 - Do not push or deploy unless the user asks. Pushing to `main` deploys the site through Cloudflare

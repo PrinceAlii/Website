@@ -26,7 +26,7 @@ Page text:
   terms, no feature names.
 - Never use em dashes (the character or its HTML entity) anywhere: page, docs, comments, or commit
   messages. Use a period, comma, colon, or plain wording.
-- Dates read `2026 to Present` and `2025 to 2026`. No dashes in dates.
+- Dates read `2026 - Present` and `2025 - 2026`, with a spaced hyphen. Never an em dash.
 - Avoid engineering words such as "atomic", "idempotent", "payload", or "state machine" in anything a
   visitor can read.
 - Prompt-shaped copy test: if a string could be pasted into an engineering ticket unchanged, or it
@@ -87,7 +87,7 @@ Those data files exist on purpose and are not rendered.
 - Employer logos must come from `public/logos/`. Record any addition in `public/logos/SOURCES.md`.
 - Phones show `shortCompany` (`ABS`, `CommBank`) to keep rows compact. Desktop shows the full
   company name. Do not remove this without retesting 320px and 390px.
-- Keep full ISO dates in the data. Render year ranges only, as `2026 to Present`.
+- Keep full ISO dates in the data. Render year ranges only, as `2026 - Present`.
 - Keep highlights, skills, education, and achievements as data only unless the user asks for a
   different page structure.
 

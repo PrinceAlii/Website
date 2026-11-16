@@ -47,7 +47,7 @@ The page shows only the company, role, and dates for each experience. Highlights
 and achievements stay in the data files unused. Do not add sections for them without an explicit
 design request.
 
-Dates read `2026 to Present` and `2025 to 2026`. Do not use dashes in dates.
+Dates read `2026 - Present` and `2025 - 2026`, with a spaced hyphen. Do not use em dashes.
 
 Phones use short company labels (`ABS`, `CommBank`) so the rows keep the 48px height. Desktop shows the full organization names. Both are stored in `src/data/experiences.ts`.
 

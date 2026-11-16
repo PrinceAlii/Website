@@ -23,7 +23,7 @@ links, employers, logos, project descriptions, or any other personal material. S
    belong to Ali. Reference screenshots are for design review only.
 6. Keep both themes. The name is static, selectable text. Nothing moves on load or hover.
 7. The rendered page has no prose. It shows names, labels, and dates only. Dates read
-   `2026 to Present`, with no dashes.
+   `2026 - Present`.
 8. Run `corepack pnpm check` and the checks in
    [`05-acceptance-criteria.md`](./05-acceptance-criteria.md) before shipping.
 

@@ -17,7 +17,7 @@ export type Experience = {
 const formatPeriod = (startDate: string, endDate: string): string => {
 	const startYear = startDate.slice(0, 4);
 	const endYear = endDate === "Present" ? "Present" : endDate.slice(0, 4);
-	return `${startYear} to ${endYear}`;
+	return `${startYear} - ${endYear}`;
 };
 
 // Newest first. Full dates are retained even though the page mirrors the

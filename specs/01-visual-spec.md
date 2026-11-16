@@ -16,7 +16,7 @@ with Ali Bonagdaran's content. Reference screenshots and raw measurements are in
 │  80px gap                                    │
 │  EXPERIENCES                                 │  section label
 │  24px gap                                    │
-│  [logo]  Company             2026 to Present │  experience row, 48px
+│  [logo]  Company             2026 - Present │  experience row, 48px
 │          Role                                │
 │  24px gap                                    │
 │  ... four more rows ...                      │
@@ -121,7 +121,7 @@ Each row is a list item with a 48px logo slot and a flexible text block.
 - Company: Geist Sans, `16px / 24px`, weight `500`, color `#101828` / `#f3f4f6`.
 - Role: Geist Sans, `14px / 20px`, weight `400`, color `#4a5565` / `#99a1af`.
 - Date: Geist Sans, `14px / 20px`, weight `400`, color `#6a7282` in both themes. Format is
-  `2026 to Present` or `2025 to 2026`, with no dashes.
+  `2026 - Present` or `2025 - 2026`.
 - There is no visible separator, border, card background, or hover surface on rows.
 
 ### Desktop layout (`≥ 640px`)
@@ -205,7 +205,7 @@ Logos identify employers. They are not decoration:
 
 - All marks sit in a 48px centered slot.
 - CommBank, Service NSW, and McDonald's: grayscale, approximately 28px tall.
-- ABS: reverse white mark on a 36px dark circular backing, because the supplied ABS artwork is white.
+- ABS: no backing. The artwork is white on a transparent background, so it is used as a CSS mask (36px wide, 32px tall) filled with `#101828` in light mode and `#f3f4f6` in dark mode.
 - McDonald's keeps its natural aspect ratio (`height: 28px`, width auto).
 - Logos are decorative (`alt=""`) because the company name is adjacent.
 - Only Ali's employer marks in `public/logos/` may be used. Never use logos from the reference site.

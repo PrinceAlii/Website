@@ -18,7 +18,7 @@ Ali Bonagdaran's personal website: one page with a name, a theme toggle, four li
 - Keep exactly four links, in this order: `LinkedIn`, `GitHub`, `Resume`, `Contact`. `Contact` is a
   same-tab `mailto:` link. Never print the email address as page text.
 - Phones use the `shortCompany` labels (`ABS`, `CommBank`). Desktop uses full names.
-- Dates read `2026 to Present`. No dashes.
+- Dates read `2026 - Present`, with a spaced hyphen. Never an em dash.
 - Keep education, skills, achievements, and highlights as data only.
 - Keep the name a plain static `h1`. Keep both themes working.
 - Do not change pinned dependencies without re-measuring.

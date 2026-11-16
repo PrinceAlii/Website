@@ -62,16 +62,6 @@
 	}
 }
 
-@layer utilities {
-	.grid-stack {
-		display: grid;
-	}
-
-	.grid-stack > * {
-		grid-area: 1 / 1;
-	}
-}
-
 @media (prefers-reduced-motion: reduce) {
 	*,
 	::before,

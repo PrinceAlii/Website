@@ -2,13 +2,13 @@
 
 ## Project
 
-This is Ali Bonagdaran's personal website: one static page with a name, three links, an
+This is Ali Bonagdaran's personal website: one static page with a name, four links, an
 `Experiences` label, and five experience rows. The live site is `https://www.alib.au`. It is hosted
 on Cloudflare Workers static assets.
 
 The layout follows [andrewqu.com](https://www.andrewqu.com/) and uses only Ali's content. For design
 decisions, look at the live site and the captures in `specs/reference/`. Match its spacing,
-typography, themes, and name motion. Do not use it as a template to expand.
+typography, and themes. The name is static. Do not use it as a template to expand.
 
 Do not copy Andrew Qu's name, biography, links, employers, project copy, logos, emoji, or any other
 personal content into the site.
@@ -65,12 +65,14 @@ Read these before changing the page:
 
 ## Fixed structure
 
-- Header: animated name and theme toggle. Nothing else.
-- Three links: `Social`, `Code`, `Professional`.
+- Header: static name and theme toggle. Nothing else.
+- Four links, in this order: `LinkedIn`, `GitHub`, `Resume`, `Contact`. `Contact` is a same-tab
+  `mailto:` link. The other three open in a new tab.
 - `Experiences` label.
 - Five experience rows, newest first.
 - No projects section.
-- No footer, navigation, bio, avatar, contact section, cards, borders, or extra sections.
+- No footer, navigation, bio, avatar, contact section, cards, borders, or extra sections. The
+  `Contact` link is the only email entry point.
 - The page ends after the last experience row.
 
 Do not add education, skills, achievements, projects, or a footer to make the site look complete.
@@ -79,6 +81,8 @@ Those data files exist on purpose and are not rendered.
 ## Content boundary
 
 - Use only Ali's real content from `src/data/`, `public/`, Ali's resume, or the existing portfolio.
+- Do not print the email address as page text. Only the `Contact` link exposes it, as a `mailto:`
+  href.
 - Never use the reference site's personal copy, employers, dates, names, links, or logos.
 - Employer logos must come from `public/logos/`. Record any addition in `public/logos/SOURCES.md`.
 - Phones show `shortCompany` (`ABS`, `CommBank`) to keep rows compact. Desktop shows the full
@@ -90,10 +94,10 @@ Those data files exist on purpose and are not rendered.
 ## Architecture
 
 - Next.js App Router, static export (`output: "export"`), output in `out/`.
-- Server components by default. Only `animated-name.tsx` and `theme-toggle.tsx` are client
-  components.
+- Server components by default. The name is a plain server-rendered `h1`. The only client component
+  is `theme-toggle.tsx`, plus the `ThemeProvider` wrapper.
 - Tailwind CSS v4 with tokens in `src/app/globals.css`.
-- `motion/react` for the name wave. `next-themes` for class-based themes.
+- `next-themes` for class-based themes.
 - Local Geist fonts under `src/fonts/`. The name uses Geist Pixel Square only.
 - Typed data in `src/data/`. Do not hardcode page content in components.
 - One page. The only other routes are the styled 404 page (`src/app/not-found.tsx`) and the sitemap
@@ -122,15 +126,16 @@ At 1440px:
 
 - Centered column `max-width: 672px`, padding 96px 32px.
 - Header at `y=96`, 48px tall, 64px bottom margin.
-- Links at `y=208`, 80px bottom margin.
+- Links at `y=208`, 20px tall, 80px bottom margin. `LinkedIn` `x=416`, `GitHub` `x=488.9`,
+  `Resume` `x=550.87`, `Contact` `x=620.95`.
 - `Experiences` at `y=308`, 24px bottom margin.
 - Rows at `y=352, 424, 496, 568, 640`, each 48px, 24px gaps.
-- Name `48px/48px` Geist Pixel Square, weight 500, tracking -1.2px.
+- Name `48px/48px` Geist Pixel Square, weight 500, tracking -1.2px, 337.06px wide.
 - Company `16px/24px` medium. Role and date `14px/20px`.
 
 At 390px:
 
-- 24px side padding. Name `clamp(1.75rem, 9.2vw, 3rem)` (35.88px measured).
+- 24px side padding. Name `clamp(1.75rem, 9.2vw, 3rem)` (35.88px measured, about 251.95px wide).
 - Header stays 48px tall. All rows stay 48px for the current content.
 - Logo slot 48px, 16px gap, text starts at `x=88`.
 - Dates sit at the right of the company line. Roles span the full text width.
@@ -138,7 +143,8 @@ At 390px:
 At 320px:
 
 - All rows stay 48px except Service NSW (68px, because its role wraps to two lines).
-- No horizontal overflow. The name does not wrap.
+- No horizontal overflow. The name (29.44px, 206.73px wide) does not wrap.
+- The four links stay on one line (`x=24` to `x=282.75`).
 
 Full values: `specs/01-visual-spec.md`.
 
@@ -159,7 +165,8 @@ Before finishing any visual change, inspect 1440, 768, 390, and 320 in light and
 - Dates line up on the same right edge.
 - No horizontal scrolling (`scrollWidth === innerWidth`).
 - The theme toggle switches to the opposite resolved theme, persists, and shows a moon or sun.
-- The name wave runs on its own and on hover. Nothing shifts. Reduced motion is static.
+- Tab order is the theme toggle, `LinkedIn`, `GitHub`, `Resume`, `Contact`.
+- The name is static, selectable text. Nothing moves on load or hover.
 - The 404 page renders in the same style.
 - No hydration or accessibility warnings.
 - No reference content appears in `src/`, `public/`, or rendered HTML.
@@ -172,7 +179,7 @@ Run the checks in `specs/05-acceptance-criteria.md`. Do not report success with 
 - Prefer deleting decoration over adding it.
 - Use semantic HTML and accessible names.
 - Keep classes consistent with the existing Tailwind patterns.
-- Do not add a component library, icon package, animation package, or state manager.
+- Do not add a component library, icon package, animation library, or state manager.
 - Do not upgrade pinned dependencies without re-measuring the layout.
 - Do not commit `out/`, `.next/`, or `node_modules/`.
 - Do not push or deploy unless asked. Pushing to `main` deploys the site through Cloudflare Workers

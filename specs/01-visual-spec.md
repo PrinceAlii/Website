@@ -12,7 +12,7 @@ with Ali Bonagdaran's content. Reference screenshots and raw measurements are in
 │  │ Ali Bonagdaran                    ☾/☀  │  │  header, 48px tall
 │  └────────────────────────────────────────┘  │
 │  64px gap                                    │
-│  Social   Code   Professional                │  link row
+│  LinkedIn  GitHub  Resume  Contact           │  link row
 │  80px gap                                    │
 │  EXPERIENCES                                 │  section label
 │  24px gap                                    │
@@ -35,7 +35,7 @@ At 1440px wide:
 | Page column (`main`) | 384 | 0 | 672 | full viewport |
 | Content area (inside 32px padding) | 416 | - | 608 | - |
 | Header | 416 | 96 | 608 | 48 |
-| Name (front layer) | 416 | 96 | 339 | 48 |
+| Name | 416 | 96 | 337.06 | 48 |
 | Link row | 416 | 208 | 608 | 20 |
 | `EXPERIENCES` label | 416 | 308 | 608 | 20 |
 | Experience 1 row | 416 | 352 | 608 | 48 |
@@ -60,14 +60,15 @@ than the viewport. Do not vertically center it or add filler.
 - Color: `#101828` light, `#f3f4f6` dark.
 - The long name must not push the toggle or create horizontal scrolling. Below `sm`, use
   `font-size: clamp(1.75rem, 9.2vw, 3rem)` and `line-height: 1`.
-  - Measured at 390px: `35.88px / 35.88px`, width 253.44px.
-  - Measured at 320px: `29.44px / 29.44px`, width 207.92px.
-  - At 1440px and 768px: `48px / 48px`, width 339px.
+  - Measured at 390px: `35.88px / 35.88px`, width about 251.95px.
+  - Measured at 320px: `29.44px / 29.44px`, width 206.73px.
+  - At 1440px and 768px: `48px / 48px`, width 337.06px.
 - The heading stays on one line at every supported width. Do not wrap "Ali Bonagdaran".
 - The header stays exactly 48px tall at all widths. The name may be smaller on phones; the toggle
   stays vertically centered.
-- The name is an `h1`. The animated layers are decorative (`aria-hidden`). The accessible name comes
-  from `aria-label="Ali Bonagdaran"`.
+- The name is a plain server-rendered `h1` with static, selectable text. It has no `aria-label`, no
+  extra layers, and no hover or idle motion. Classes: `font-pixel`,
+  `text-[clamp(1.75rem,9.2vw,3rem)]`, `font-medium`, `leading-none`, `tracking-tight`.
 
 ### Theme toggle
 
@@ -79,14 +80,25 @@ than the viewport. Do not vertically center it or add filler.
 
 ## 3. Link row
 
-- Exactly three links in this order: **Social**, **Code**, **Professional**.
-- `display: flex; flex-wrap: wrap; gap: 16px;`
+- Exactly four links in this order: **LinkedIn**, **GitHub**, **Resume**, **Contact**.
+- `display: flex; flex-wrap: wrap; gap: 16px;`. Wrapping is a safety net. The four links fit on one
+  line at every supported width.
 - Font: Geist Sans, `14px / 20px`, weight `600`.
 - Light: `#4a5565`, hover `#101828`. Dark: `#99a1af`, hover `#f3f4f6`.
 - Row sits 64px below the header (`header` margin-bottom) and 80px above the section label.
 - No separators, icons, underlines, pills, or buttons.
 
-At 1440px the measured link positions are `x=416`, `473.53`, and `524.69`, all at `y=208`.
+At 1440px all four links sit at `y=208` with height 20:
+
+| Link | x | width |
+| --- | ---: | ---: |
+| LinkedIn | 416 | 56.9 |
+| GitHub | 488.9 | 45.97 |
+| Resume | 550.87 | 54.09 |
+| Contact | 620.95 | 53.8 |
+
+At 320px the four links stay on one line, from `x=24` to `x=282.75`. The container is 272px wide, so
+the row ends at `x=296` at most.
 
 ## 4. Experiences label
 
@@ -145,7 +157,7 @@ Each row is a list item with a 48px logo slot and a flexible text block.
 | --- | ---: | ---: | ---: | ---: |
 | Page content | 24 | - | 342 | - |
 | Header | 24 | 96 | 342 | 48 |
-| Name | 24 | 102.06 | 253.44 | 35.88 |
+| Name | 24 | 102.06 | 251.95 | 35.88 |
 | Link row | 24 | 208 | 342 | 20 |
 | `EXPERIENCES` | 24 | 308 | 342 | 20 |
 | Row 1 | 24 | 352 | 342 | 48 |
@@ -162,7 +174,7 @@ Each row is a list item with a 48px logo slot and a flexible text block.
 | Element | x | y | width | height |
 | --- | ---: | ---: | ---: | ---: |
 | Page content | 24 | - | 272 | - |
-| Name | 24 | 105.28 | 207.92 | 29.44 |
+| Name | 24 | 105.28 | 206.73 | 29.44 |
 | Header | 24 | 96 | 272 | 48 |
 | Row 1 | 24 | 352 | 272 | 48 |
 | Row 2 | 24 | 424 | 272 | 48 |
@@ -218,11 +230,11 @@ Do not add any of the following, even if other portfolios usually have them:
 - About/bio paragraph
 - Footer or copyright line
 - Navigation bar, logo bar, or social icon strip
-- Contact section or email call to action
+- Contact section or email call to action. The `Contact` link in the link row is the only email entry point.
 - Education, skills, achievements, certifications, or awards sections
 - Cards, panels, rounded containers, borders, separators, or background fills
-- Scroll progress, page transitions, cursor effects, or decorative particles
-- Extra links beyond Social, Code, and Professional
+- Name animation, scroll progress, page transitions, cursor effects, or decorative particles
+- Extra links beyond LinkedIn, GitHub, Resume, and Contact
 
 ## 10. 404 page
 

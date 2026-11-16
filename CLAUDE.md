@@ -6,20 +6,21 @@ with `specs/06-agent-playbook.md`.
 
 ## What this is
 
-Ali Bonagdaran's personal website: one page with a name, a theme toggle, three links, an
+Ali Bonagdaran's personal website: one page with a name, a theme toggle, four links, an
 `Experiences` label, and five experience rows. The layout follows
-[andrewqu.com](https://www.andrewqu.com/). Match its spacing, typography, themes, and name animation.
+[andrewqu.com](https://www.andrewqu.com/). Match its spacing, typography, and themes. The name is static.
 
 ## Hard rules
 
 - Use Ali's content only. Never copy Andrew Qu's name, bio, links, employers, dates, logos, project
   copy, or assets.
 - No projects section. No footer, nav, bio, avatar, contact block, cards, or extra sections.
-- Keep exactly three links: `Social`, `Code`, `Professional`.
+- Keep exactly four links, in this order: `LinkedIn`, `GitHub`, `Resume`, `Contact`. `Contact` is a
+  same-tab `mailto:` link. Never print the email address as page text.
 - Phones use the `shortCompany` labels (`ABS`, `CommBank`). Desktop uses full names.
 - Dates read `2026 to Present`. No dashes.
 - Keep education, skills, achievements, and highlights as data only.
-- Keep the name animation and both themes working.
+- Keep the name a plain static `h1`. Keep both themes working.
 - Do not change pinned dependencies without re-measuring.
 
 ## Verify before finishing
@@ -29,7 +30,6 @@ corepack pnpm check
 ```
 
 Inspect 1440, 768, 390, and 320 in light and dark. Confirm the 48px header, the vertical spacing,
-48px rows at 390 and 1440, aligned dates, no horizontal overflow, theme persistence, no layout shift
-from the name animation, a styled 404 page, and no reference content in served files.
+48px rows at 390 and 1440, aligned dates, no horizontal overflow, theme persistence, a static name, a styled 404 page, and no reference content in served files.
 
 Acceptance criteria: `specs/05-acceptance-criteria.md`.

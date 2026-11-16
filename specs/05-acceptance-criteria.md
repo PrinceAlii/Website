@@ -8,7 +8,8 @@ device scale factor 1. Reference values come from the captures in `specs/referen
 - [ ] The page has exactly one `h1`: `Ali Bonagdaran`.
 - [ ] The page has exactly one `h2`: `Experiences`.
 - [ ] The page has exactly five experience `h3` elements.
-- [ ] There are exactly three links in the link row, labelled `Social`, `Code`, `Professional`.
+- [ ] There are exactly four links in the link row, in this order: `LinkedIn`, `GitHub`, `Resume`,
+      `Contact`.
 - [ ] The page has no `nav`, `footer`, project section, about section, skills section, education
       section, achievements section, or contact section.
 - [ ] The page ends after the fifth experience row. No footer, copyright, or spacer content follows.
@@ -22,8 +23,10 @@ device scale factor 1. Reference values come from the captures in `specs/referen
 - [ ] `main` is 672px wide at `x=384`.
 - [ ] Content starts at `x=416` and is 608px wide.
 - [ ] Header is at `y=96`, 48px tall.
-- [ ] Name front layer is `48px / 48px`, weight 500, at `x=416, y=96`.
-- [ ] Link row is at `y=208`; the three links occupy `x=416`, `473.53`, and `524.69`.
+- [ ] Name is `48px / 48px`, weight 500, 337.06px wide, at `x=416, y=96`.
+- [ ] Link row is at `y=208`. All four links are 20px tall at `y=208`: `LinkedIn` at `x=416`
+      (56.9 wide), `GitHub` at `x=488.9` (45.97 wide), `Resume` at `x=550.87` (54.09 wide), and
+      `Contact` at `x=620.95` (53.8 wide).
 - [ ] `Experiences` label is at `y=308`, 20px tall, with 24px bottom margin.
 - [ ] Experience rows start at `y=352, 424, 496, 568, 640`.
 - [ ] Each row is 48px tall with a 48px logo slot and a 16px gap to the text block.
@@ -38,8 +41,8 @@ device scale factor 1. Reference values come from the captures in `specs/referen
 
 - [ ] `main` padding is 24px, so content is 342px wide at `x=24`.
 - [ ] Header is at `y=96`, 48px tall.
-- [ ] Name is 35.88px / 35.88px, 253.44px wide, and does not wrap.
-- [ ] Link row is at `y=208`.
+- [ ] Name is 35.88px / 35.88px, about 251.95px wide, and does not wrap.
+- [ ] Link row is at `y=208`, and all four links fit on one line.
 - [ ] `Experiences` label is at `y=308`.
 - [ ] Rows start at `y=352, 424, 496, 568, 640` and are all 48px tall.
 - [ ] Logo slot is 48px, text block starts at `x=88` and is 278px wide.
@@ -51,7 +54,9 @@ device scale factor 1. Reference values come from the captures in `specs/referen
 ## 4. Narrow mobile (320 × 1000)
 
 - [ ] Content is 272px wide at `x=24`.
-- [ ] Name is 29.44px / 29.44px, 207.92px wide, and does not wrap.
+- [ ] Name is 29.44px / 29.44px, 206.73px wide, and does not wrap.
+- [ ] The four links stay on one line, from `x=24` to `x=282.75`. The row ends at `x=296` at most.
+      `flex-wrap` is only a safety net.
 - [ ] Header remains 48px tall.
 - [ ] Rows start at `y=352, 424, 496, 568, 660`.
 - [ ] Rows 1 to 3 and 5 are 48px tall; Service NSW is 68px because its role wraps to two lines.
@@ -65,6 +70,7 @@ device scale factor 1. Reference values come from the captures in `specs/referen
 - [ ] Dates are in the desktop right column.
 - [ ] Content remains inside the centered 672px column with 32px padding.
 - [ ] No horizontal scrolling.
+- [ ] The name is 337.06px wide at 768px.
 - [ ] No element from the mobile short-name layout is visible.
 
 ## 6. Color and theme
@@ -79,24 +85,27 @@ device scale factor 1. Reference values come from the captures in `specs/referen
 - [ ] With no saved selection, the theme follows the OS preference.
 - [ ] Background/text/color transitions are 300ms and do not flash on load.
 - [ ] No other element changes color on hover except links and the theme button.
+- [ ] With `prefers-reduced-motion: reduce`, transitions are effectively off and nothing depends on
+      motion.
 
-## 7. Name motion
+## 7. Name
 
-- [ ] At rest, the front layer is sharp and visible; the back layer is hidden.
-- [ ] While idle, the name flips in a left-to-right wave approximately every 1.5s.
-- [ ] Hovering/pointer-entering the name triggers the wave immediately.
-- [ ] The wave resets right-to-left and settles without a visible jump.
-- [ ] Header height stays 48px and the toggle never moves during the animation.
-- [ ] No horizontal overflow or scrollbar appears at any point during the animation.
+- [ ] The name is static, selectable text.
+- [ ] Nothing moves on load or hover.
+- [ ] The name is a plain `h1` with no `aria-label` and no extra layers.
 - [ ] There is no hydration mismatch warning in the console.
-- [ ] With `prefers-reduced-motion: reduce`, the name stays static and no interval animation runs.
 
 ## 8. Links and assets
 
-- [ ] `Social` → `https://www.linkedin.com/in/alibonagdaran/`, new tab.
-- [ ] `Code` → `https://github.com/PrinceAlii`, new tab.
-- [ ] `Professional` → `/resume.pdf`, new tab.
-- [ ] All external links include `rel="noopener noreferrer"`.
+- [ ] `LinkedIn` → `https://www.linkedin.com/in/alibonagdaran/`, new tab.
+- [ ] `GitHub` → `https://github.com/PrinceAlii`, new tab.
+- [ ] `Resume` → `/resume.pdf`, new tab.
+- [ ] `Contact` → `mailto:alibonagdaran@gmail.com`, same tab, with no `target` and no `rel`.
+- [ ] `LinkedIn`, `GitHub`, and `Resume` include `rel="noopener noreferrer"`.
+- [ ] All four links share the same plain text style: 14px/20px, weight 600, no pill, no button
+      chrome, no icons.
+- [ ] The email address does not appear as visible page text.
+- [ ] JSON-LD `sameAs` lists only the LinkedIn and GitHub `https` links.
 - [ ] `/resume.pdf` returns 200 and opens the correct PDF.
 - [ ] `/og.png` returns 200 and is 1200 × 630. Its footer reads `alib.au`.
 - [ ] `/favicon.svg`, `/robots.txt`, and all four `/logos/*.svg` return 200.
@@ -105,9 +114,9 @@ device scale factor 1. Reference values come from the captures in `specs/referen
 
 ## 9. Accessibility
 
-- [ ] Tab order follows the page from top to bottom: theme toggle, Social, Code, Professional.
+- [ ] Tab order follows the page from top to bottom: theme toggle, LinkedIn, GitHub, Resume, Contact.
 - [ ] Focus-visible outline is visible on all interactive elements.
-- [ ] The name has an accessible name and both animation layers are `aria-hidden`.
+- [ ] The name is exposed by its own text, with no `aria-label`.
 - [ ] The section is labelled by the `Experiences` heading.
 - [ ] Logos have empty alt text.
 - [ ] The theme button has `aria-label="Toggle theme"`.

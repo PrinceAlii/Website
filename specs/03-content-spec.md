@@ -25,27 +25,32 @@ not allow copying its content into `src/`, `public/`, or metadata.
 | Current role | Graduate DevOps Engineer | Yes, first experience role |
 | Current employer | Australian Bureau of Statistics | Yes, first two experiences |
 | Location | Sydney, NSW | No |
-| Email | `alibonagdaran@gmail.com` | No |
+| Email | `alibonagdaran@gmail.com` | Only as the `mailto:` href of the `Contact` link. Never as page text. |
 | Site URL | `https://www.alib.au` | Metadata, sitemap, and structured data only |
 | Description | "Graduate DevOps Engineer at the Australian Bureau of Statistics. Sydney-based, focused on cloud platforms and developer tooling." | Metadata only |
 
-Do not show the email, location, or description on the page. The page has no bio or contact block
-and must not get one.
+Do not show the location or description on the page. Do not print the email address as page text.
+Only the `Contact` link exposes it, as a `mailto:` href. The page has no bio or contact block and
+must not get one.
 
 ## 3. Links
 
-Exactly three links, in this order, with these labels:
+Exactly four links, in this order, with these labels:
 
 | Label | Destination | Behavior |
 | --- | --- | --- |
-| Social | `https://www.linkedin.com/in/alibonagdaran/` | New tab |
-| Code | `https://github.com/PrinceAlii` | New tab |
-| Professional | `/resume.pdf` | New tab |
+| LinkedIn | `https://www.linkedin.com/in/alibonagdaran/` | New tab |
+| GitHub | `https://github.com/PrinceAlii` | New tab |
+| Resume | `/resume.pdf` | New tab |
+| Contact | `mailto:alibonagdaran@gmail.com` | Same tab |
 
-- All three use `target="_blank"` and `rel="noopener noreferrer"`.
-- Label text is exactly `Social`, `Code`, `Professional`, in sentence case, with no icons or arrows.
+- `LinkedIn`, `GitHub`, and `Resume` use `target="_blank"` and `rel="noopener noreferrer"`.
+- `Contact` has no `target` and no `rel`.
+- All four share one plain text-link style: 14px/20px, weight 600, no pill, no button chrome, no
+  icons or arrows.
+- Label text is exactly `LinkedIn`, `GitHub`, `Resume`, `Contact`.
 - `/resume.pdf` is the real resume in `public/resume.pdf` and must be included in the export.
-- Do not add email, X/Twitter, Instagram, or other links.
+- Do not add X/Twitter, Instagram, or other links.
 
 ## 4. Experiences
 
@@ -87,9 +92,10 @@ confirm the scope first.
 The main page shows only names, labels, and dates. It has no sentences. The full list is:
 
 - `Ali Bonagdaran`
-- `Social`
-- `Code`
-- `Professional`
+- `LinkedIn`
+- `GitHub`
+- `Resume`
+- `Contact`
 - `Experiences` (rendered uppercase)
 - Five company labels, five role labels, and five date ranges from the table above.
 
@@ -110,7 +116,8 @@ Metadata is not visible on the page. Update it when Ali's role changes.
 
 Structured data: `src/app/layout.tsx` adds a JSON-LD `Person` script built from `src/data/profile.ts`
 with `name`, `url` (`https://www.alib.au`), `jobTitle`, `worksFor`, and `sameAs`. `sameAs` lists
-the absolute profile links (LinkedIn and GitHub). The script is not visible on the page.
+only the two `https` profile links (LinkedIn and GitHub). The `Resume` and `Contact` links are not
+included. The script is not visible on the page.
 
 Sitemap: `src/app/sitemap.ts` lists `https://www.alib.au/`. `public/robots.txt` points to
 `https://www.alib.au/sitemap.xml`.
@@ -119,9 +126,9 @@ Sitemap: `src/app/sitemap.ts` lists `https://www.alib.au/`. `public/robots.txt` 
 
 | Asset | Purpose | Rule |
 | --- | --- | --- |
-| `public/resume.pdf` | Professional link target | Ali's real resume; keep current. |
+| `public/resume.pdf` | `Resume` link target | Ali's real resume; keep current. |
 | `public/favicon.svg` | Browser icon | Custom "A" mark, not from the reference site. |
-| `public/og.png` | Social card | Made from Ali's name and role, 1200 × 630. Footer reads `alib.au`. |
+| `public/og.png` | Open Graph image | Made from Ali's name and role, 1200 × 630. Footer reads `alib.au`. |
 | `public/logos/abs.svg` | ABS employer mark | White reverse artwork on dark circle. |
 | `public/logos/commbank.svg` | CommBank employer mark | Official diamond, grayscale in UI. |
 | `public/logos/service-nsw.svg` | Service NSW employer mark | Circular symbol, grayscale in UI. |

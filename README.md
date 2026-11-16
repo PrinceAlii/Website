@@ -3,7 +3,6 @@
 - Next.js 16 (App Router, static export)
 - React 19
 - Tailwind CSS 4
-- Motion for the name animation
 - next-themes for light and dark mode
 - Geist Sans, Geist Mono, and Geist Pixel Square, vendored locally
 
@@ -35,14 +34,14 @@ corepack pnpm check       # lint + typecheck + build
 
 | What | Where |
 | --- | --- |
-| Name, description, links, site URL (`https://www.alib.au`) | `src/data/profile.ts` |
+| Name, description, email, links, site URL (`https://www.alib.au`) | `src/data/profile.ts` |
 | Experience entries, dates, roles, highlights | `src/data/experiences.ts` |
 | Education (data only) | `src/data/education.ts` |
 | Skills (data only) | `src/data/skills.ts` |
 | Achievements (data only) | `src/data/achievements.ts` |
 | Resume download | `public/resume.pdf` |
 | Employer logos | `public/logos/` |
-| Social card (footer reads `alib.au`) | `public/og.png` |
+| Open Graph image (footer reads `alib.au`) | `public/og.png` |
 
 The page shows only the company, role, and dates for each experience. Highlights, skills, education,
 and achievements stay in the data files unused. Do not add sections for them without an explicit
@@ -57,7 +56,7 @@ Phones use short company labels (`ABS`, `CommBank`) so the rows keep the 48px he
 ```text
 src/
   app/          page shell, 404 page, sitemap, metadata, global styles
-  components/   name, links, experience rows, logos, theme controls
+  components/   links, experience rows, logos, theme controls
   data/         typed content
   fonts/        locally hosted Geist fonts
 public/         resume, logos, favicon, OG image, robots.txt, _headers

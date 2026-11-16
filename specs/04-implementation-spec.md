@@ -8,7 +8,6 @@
 | UI runtime | React `19.3.1`, React DOM `19.3.1` |
 | Language | TypeScript `6.0.3`, strict mode |
 | Styling | Tailwind CSS `4.3.5` via `@tailwindcss/postcss` |
-| Motion | `motion` `14.14.0` (import from `motion/react`) |
 | Themes | `next-themes` `0.4.6` |
 | Linting/formatting | Biome `2.4.15` |
 | Package manager | pnpm `11.3.0` via Corepack |
@@ -51,7 +50,6 @@ Files in `public/` are served as they are. Build output goes to `out/`.
 │   │   ├── sitemap.ts        # sitemap.xml (force-static)
 │   │   └── globals.css       # Tailwind v4 theme, dark variant, transitions
 │   ├── components/
-│   │   ├── animated-name.tsx # client component, name flip wave
 │   │   ├── company-logo.tsx  # employer mark mapping
 │   │   ├── experience-item.tsx
 │   │   ├── profile-links.tsx
@@ -84,7 +82,9 @@ Files in `public/` are served as they are. Build output goes to `out/`.
 ```tsx
 <main className="mx-auto min-h-screen max-w-2xl px-6 py-24 sm:px-8">
   <header className="mb-16 flex h-12 items-center justify-between">
-    <AnimatedName name={profile.name} />
+    <h1 className="font-pixel text-[clamp(1.75rem,9.2vw,3rem)] font-medium leading-none tracking-tight">
+      {profile.name}
+    </h1>
     <ThemeToggle />
   </header>
 
@@ -101,8 +101,9 @@ Files in `public/` are served as they are. Build output goes to `out/`.
 </main>
 ```
 
-Only `AnimatedName` and `ThemeToggle` are client components. Keep the rest server-rendered. Do not
-make the page a client component to add interactions.
+The name is a plain server-rendered `h1`. The only client component is `ThemeToggle`, plus the
+`ThemeProvider` wrapper. Keep the rest server-rendered. Do not make the page a client component to
+add interactions.
 
 ## 4. Data contracts
 
@@ -143,7 +144,10 @@ Rules:
 - Keep the five experiences newest first.
 - Add an experience by editing `src/data/experiences.ts` and adding a logo mapping only if a new
   employer appears. Do not add a projects array.
-- `profile.links` must contain exactly three entries until the product requirement changes.
+- `profile.links` must contain exactly four entries (`LinkedIn`, `GitHub`, `Resume`, `Contact`) until
+  the product requirement changes. `Contact` is `mailto:` with `newTab: false`. The other three have
+  `newTab: true`.
+- Do not print `profile.email` as page text. Only the `Contact` href uses it.
 - The data files hold more than the page shows (education, skills, achievements, highlights). Do
   not render them without an explicit design change.
 
@@ -164,7 +168,6 @@ Fonts are vendored from `vercel/geist-font` and loaded with `next/font/local`:
 - Overrides the gray palette in `@theme` to the exact values in the visual spec.
 - Maps font variables in `@theme inline`.
 - Uses `background-color` and `color` transitions at 300ms.
-- Provides `.grid-stack` for the two name layers.
 - Turns off animation and transition timing under `prefers-reduced-motion`.
 - Provides focus-visible outlines.
 
@@ -199,15 +202,17 @@ Do not use `localStorage` directly, add a theme flash, or default to a fixed the
 - One `h1` (the name), one `h2` (`Experiences`), one `h3` per experience.
 - The experience list is a real `ul`/`li` list.
 - The section is labelled by its `h2` via `aria-labelledby`.
-- Animated name layers are `aria-hidden`; `aria-label` on the `h1` provides the accessible name.
+- The name `h1` is plain text with no `aria-label`. Its text is the accessible name.
 - CSS hides the short mobile company label on desktop and the full label on mobile, so only one
   is exposed at a time.
 - Company logos use empty alt text because the company name sits next to them.
-- External links use descriptive visible text, `target="_blank"`, and `rel="noopener noreferrer"`.
+- `LinkedIn`, `GitHub`, and `Resume` open in a new tab with `target="_blank"` and
+  `rel="noopener noreferrer"`. `Contact` is a `mailto:` link in the same tab, with no `target` and no
+  `rel`. All four use descriptive visible text.
 - Focus-visible outlines are never removed.
 - Text contrast meets WCAG AA at the specified grays.
 - The page works with JavaScript disabled. Content, links, and default themes still render. Only the
-  name animation and the toggle need JavaScript.
+  theme toggle needs JavaScript.
 
 ## 8. SEO and metadata
 

@@ -1,4 +1,3 @@
-import { AnimatedName } from "@/components/animated-name";
 import { ExperienceItem } from "@/components/experience-item";
 import { ProfileLinks } from "@/components/profile-links";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -9,7 +8,9 @@ export default function Home() {
 	return (
 		<main className="mx-auto min-h-screen max-w-2xl px-6 py-24 sm:px-8">
 			<header className="mb-16 flex h-12 items-center justify-between">
-				<AnimatedName name={profile.name} />
+				<h1 className="font-pixel text-[clamp(1.75rem,9.2vw,3rem)] font-medium leading-none tracking-tight">
+					{profile.name}
+				</h1>
 				<ThemeToggle />
 			</header>
 

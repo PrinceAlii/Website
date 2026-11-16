@@ -61,7 +61,7 @@ At 1440, 768, 390, and 320 wide, 1000 tall:
 
 ## 404 page (section 11)
 
-- [ ] An unknown URL shows the styled 404 page: a large serif `404`, the castle message, and a link
+- [ ] An unknown URL shows the styled 404 page: a large Source Serif `404`, the castle message, and a link
   to `/`, nothing else.
 - [ ] It matches the main page in both themes and has no horizontal scroll at the four viewports.
 

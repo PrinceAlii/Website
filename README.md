@@ -58,6 +58,8 @@ Pushing to `main` deploys. There is no local deploy step.
 - Design inspired by [andrewqu.com](https://www.andrewqu.com/). Reference captures in
   `specs/reference/` are for design review only and are not deployed.
 - Geist fonts by Vercel, under the SIL Open Font License 1.1 (`src/fonts/OFL.txt`).
+- The 404 numeral uses a subset of Source Serif 4 by Adobe, under the SIL Open Font License 1.1
+  (`src/fonts/OFL-SourceSerif.md`).
 - Employer logos are trademarks of their owners, used only to identify Ali's work history. Sources
   are listed in `specs/SPEC.md`.
 - Site content and code © Ali Bonagdaran.

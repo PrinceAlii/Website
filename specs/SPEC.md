@@ -242,6 +242,13 @@ with `next/font/local`. Filenames are local aliases.
 | --- | --- | --- |
 | `Geist-Variable.woff2` | `--font-geist-sans` | All text except the name |
 | `GeistPixel-Square.woff2` | `--font-geist-pixel-square` | The name only, weight 500 |
+| `Serif404-Semibold.woff2` | none (class on the `h1`) | The 404 numeral only |
+
+`Serif404-Semibold.woff2` is Source Serif 4 Semibold (opsz 60) from Google Fonts, subset to the
+glyphs `0` and `4` (1.4 KB). It stands in for Larish Neue Semibold, which is paid. Adobe reserves the
+name "Source" under the SIL Open Font License, so the subset uses a different name. License:
+`src/fonts/OFL-SourceSerif.md`. It is not preloaded, so only the 404 page downloads it. To add more
+characters, download a new subset with `&text=` set to every character needed.
 
 ## 10. Accessibility
 
@@ -255,11 +262,10 @@ with `next/font/local`. Filenames are local aliases.
 `src/app/not-found.tsx` is a server component using the same column, padding, and colors as the
 main page, in both themes. From top to bottom:
 
-- `404` as the `h1`, in the system serif (`font-serif`: ui-serif, Georgia, Times), 96px, 128px from
-  640px up, `line-height: 1`, tight tracking, primary text color.
-- 24px below: `Sorry, the page you’re looking for is in another castle.` in Geist 16px/24px,
-  secondary color.
-- 16px below: the `Back to home` link to `/`, styled like the profile links.
+- `404` as the `h1`, in `Serif404-Semibold` (section 9), `clamp(8rem, 42vw, 12rem)` (192px on
+  desktop, about 134px at 320), `line-height: 1`, tight tracking, primary text color.
+- 24px below: `I’m sorry, that page is in another castle!` in Geist 16px/24px, secondary color.
+- 16px below: the `Back home` link to `/`, styled like the profile links.
 
 No header, toggle, link row, images, or animation. It builds to `/_not-found` and is served as `out/404.html`.
 

@@ -116,6 +116,7 @@ element takes one of them; it never introduces a fourth gray.
 
 **Display Font:** Geist Pixel Square (with ui-monospace, monospace)
 **Body Font:** Geist (with Arial, sans-serif)
+**404 Font:** the system serif (ui-serif, Georgia, Times), for the 404 numeral only
 
 **Character:** a pixel nameplate over a clean geometric sans. The pixel face signals an engineer; the
 sans keeps everything else neutral and readable.
@@ -128,6 +129,8 @@ sans keeps everything else neutral and readable.
 - **Body** (400, 14px, 20px): roles and dates.
 - **Link** (600, 14px, 20px): the four profile links and the 404 link.
 - **Label** (500, 14px, wide tracking, uppercase): the `Experiences` section label.
+- **Error numeral** (400, system serif, 96px, 128px from 640px up, line-height 1): the `404` on the
+  404 page only. The one serif on the site.
 
 ### Named Rules
 

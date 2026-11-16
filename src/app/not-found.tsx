@@ -12,9 +12,12 @@ export const metadata: Metadata = {
 export default function NotFound() {
 	return (
 		<>
-			<h1 className="mb-4 text-base/6 font-medium text-gray-900 dark:text-gray-100">
-				That page doesn't exist.
+			<h1 className="font-serif text-8xl leading-none tracking-tight text-gray-900 sm:text-9xl dark:text-gray-100">
+				404
 			</h1>
+			<p className="mt-6 mb-4 text-gray-600 dark:text-gray-400">
+				Sorry, the page you’re looking for is in another castle.
+			</p>
 			<Link href="/" className={`text-sm font-semibold ${mutedLink}`}>
 				Back to home
 			</Link>

@@ -38,12 +38,18 @@ Pushing to `main` deploys. There is no local deploy step.
   from the GitHub repo `PrinceAlii/Website`, branch `main`, running `pnpm run build` then
   `npx wrangler deploy`. It uses Node 24 from `.node-version` and pnpm from the `packageManager`
   field. `wrangler` is a pinned devDependency. Other branches get preview builds automatically.
-- `wrangler.jsonc`: `name: "website"`, assets directory `./out`, `not_found_handling: "404-page"`,
-  and a custom domain route for `www.alib.au`. The apex `alib.au` redirects to `https://www.alib.au`.
+- `wrangler.jsonc`: `name: "website"`, Worker script `worker/index.ts`, assets directory `./out`
+  bound as `ASSETS`, `not_found_handling: "404-page"`, `run_worker_first: ["/"]`, and a custom
+  domain route for `www.alib.au`. The apex `alib.au` redirects to `https://www.alib.au`.
   The site is served from the domain root, so there is no `basePath` or `assetPrefix`.
 - `public/_headers` sets `X-Content-Type-Options`, `Referrer-Policy`, `X-Frame-Options`, and
   `Permissions-Policy`, plus long immutable caching for `/_next/static/*`. There is no CSP on purpose,
   because Next and next-themes inject inline scripts.
+- Markdown for Agents without a paid plan: the Worker runs only for `/`. With
+  `Accept: text/markdown` it returns `out/index.md` as `text/markdown` with `Vary: Accept` and an
+  estimated `x-markdown-tokens` count. Everything else is HTML from static assets. Test locally with
+  `corepack pnpm build`, then `corepack pnpm exec wrangler dev` and
+  `curl -H "Accept: text/markdown" localhost:8787/`.
 - GitHub Actions (`.github/workflows/ci.yml`) runs `pnpm check` on pull requests and pushes to `main`.
   It does not deploy.
 

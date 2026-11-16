@@ -50,6 +50,7 @@ export const metadata: Metadata = {
 	},
 	alternates: {
 		canonical: "/",
+		types: { "text/markdown": "/index.md" },
 	},
 	openGraph: {
 		title: profile.name,

@@ -78,8 +78,11 @@ These rules cover page text, code comments, docs, errors, commit messages, PRs, 
   component is `src/components/theme-toggle.tsx`. `src/app/layout.tsx` wraps the app in the
   `next-themes` `ThemeProvider`. Do not make the page a client component to add interactions.
 - Page content lives in typed data in `src/data/`. Do not hardcode it in components.
-- The only routes are `/`, the 404 page, and `/sitemap.xml`. Do not add project pages, a CMS, API
-  routes, server functions, `basePath`, or `assetPrefix`.
+- The only routes are `/`, the 404 page, `/sitemap.xml`, and `/index.md` (the markdown copy of `/`
+  for agents). Do not add project pages, a CMS, API routes, server functions, `basePath`, or
+  `assetPrefix`.
+- `worker/index.ts` is the only server code. It runs for `/` only and serves `/index.md` when the
+  request sends `Accept: text/markdown`. Keep it that small.
 - Tabs, double quotes, 100-column lines, formatted by Biome only.
 - Do not add a component library, icon package, animation library, or state manager.
 - Prefer deleting decoration over adding it. Use semantic HTML and accessible names.
@@ -96,6 +99,8 @@ These rules cover page text, code comments, docs, errors, commit messages, PRs, 
 - Spacing, type, or the name: edit the Tailwind classes and `specs/SPEC.md` together.
 - Theme: keep the `next-themes` class strategy, system default, and `theme` storage key.
 - 404 page, sitemap, metadata: `src/app/not-found.tsx`, `src/app/sitemap.ts`, `src/app/layout.tsx`.
+- Markdown for agents: `src/app/index.md/route.ts` builds it from `src/data/`, and
+  `worker/index.ts` serves it.
 - Update `specs/` and this file when behavior or content changes. If a request conflicts with them,
   point out the conflict instead of picking a side.
 

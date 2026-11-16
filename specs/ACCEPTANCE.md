@@ -61,13 +61,16 @@ At 1440, 768, 390, and 320 wide, 1000 tall:
 
 ## 404 page (section 11)
 
-- [ ] An unknown URL shows the styled 404 page with a short message and a link to `/`, nothing else.
+- [ ] An unknown URL shows the styled 404 page: a large serif `404`, the castle message, and a link
+  to `/`, nothing else.
 - [ ] It matches the main page in both themes and has no horizontal scroll at the four viewports.
 
 ## Build and deployment
 
 - [ ] `corepack pnpm check` passes, including from a clean `pnpm install --frozen-lockfile`.
-- [ ] The build has the three routes and the `out/` files in section 12.
+- [ ] `curl -H "Accept: text/markdown"` on `/` returns markdown with `Content-Type: text/markdown`.
+  Without that header, `/` returns HTML. Both responses send `Vary: Accept`.
+- [ ] The build has the four routes and the `out/` files in section 12.
 - [ ] Hosting config still matches the Deployment section of `README.md`.
 - [ ] No em dash in the page, metadata, docs, comments, or specs. This must return no matches:
 

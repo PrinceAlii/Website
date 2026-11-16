@@ -252,13 +252,20 @@ with `next/font/local`. Filenames are local aliases.
 
 ## 11. 404 page
 
-`src/app/not-found.tsx` is a server component using the same column, padding, fonts, and colors as
-the main page, in both themes. It shows a short plain message and one link to `/`. No header, toggle,
-link row, images, or animation. It builds to `/_not-found` and is served as `out/404.html`.
+`src/app/not-found.tsx` is a server component using the same column, padding, and colors as the
+main page, in both themes. From top to bottom:
+
+- `404` as the `h1`, in the system serif (`font-serif`: ui-serif, Georgia, Times), 96px, 128px from
+  640px up, `line-height: 1`, tight tracking, primary text color.
+- 24px below: `Sorry, the page you’re looking for is in another castle.` in Geist 16px/24px,
+  secondary color.
+- 16px below: the `Back to home` link to `/`, styled like the profile links.
+
+No header, toggle, link row, images, or animation. It builds to `/_not-found` and is served as `out/404.html`.
 
 ## 12. Build output
 
-The build has three static routes: `/`, `/_not-found`, and `/sitemap.xml`. `next.config.ts` sets
+The build has four static routes: `/`, `/_not-found`, `/sitemap.xml`, and `/index.md`. `next.config.ts` sets
 `output: "export"`, `images: { unoptimized: true }`, and `trailingSlash: true`. After a build, `out/`
-contains `index.html`, `404.html`, `sitemap.xml`, `resume.pdf`, `og.png`, `robots.txt`, `_headers`,
+contains `index.html`, `index.md`, `404.html`, `sitemap.xml`, `resume.pdf`, `og.png`, `robots.txt`, `_headers`,
 and `_next/`.

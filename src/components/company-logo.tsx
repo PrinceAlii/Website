@@ -35,7 +35,7 @@ export function CompanyLogo({ kind }: CompanyLogoProps) {
 				alt=""
 				width={32}
 				height={32}
-				className="h-7 w-7 object-contain brightness-75 grayscale dark:brightness-100"
+				className="h-7 w-7 object-contain brightness-90 grayscale dark:brightness-100"
 			/>
 		);
 	}

@@ -204,7 +204,7 @@ Each row is a list item with a 48px wide, 44px tall logo slot and a flexible tex
 Logos identify employers. They are not decoration:
 
 - All marks sit in a 48px centered slot.
-- CommBank, Service NSW, and McDonald's: grayscale, approximately 28px tall. CommBank and McDonald's are darkened in light mode (`brightness-75`).
+- CommBank, Service NSW, and McDonald's: grayscale, approximately 28px tall. CommBank and McDonald's are darkened in light mode (`brightness-75` for McDonald's, `brightness-90` for CommBank, so its two tones stay visible).
 - ABS: no backing. The artwork is white on a transparent background, so it is used as a CSS mask (36px wide, 32px tall) filled with `#101828` in light mode and `#f3f4f6` in dark mode.
 - McDonald's keeps its natural aspect ratio (`height: 28px`, width auto).
 - Logos are decorative (`alt=""`) because the company name is adjacent.

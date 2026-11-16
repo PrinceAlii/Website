@@ -22,7 +22,7 @@ Ali has worked, then hands them off to the full details.
 A visit succeeds when any of these happens:
 
 - The visitor takes in the name and career path within a few seconds.
-- The visitor opens the resume or LinkedIn for more.
+- The visitor opens LinkedIn or GitHub for more.
 - The visitor uses Contact to send an email.
 
 ## Positioning
@@ -35,11 +35,11 @@ self-description. The content is Ali's own and nothing else.
 
 - Visitors arrive from a search for Ali's name, a shared link, LinkedIn, or GitHub.
 - Many visits are on phones, so the page must read cleanly from 320px up.
-- The full story lives off the page: `public/resume.pdf`, LinkedIn, and GitHub.
+- The full story lives off the page: LinkedIn and GitHub.
 
 ## Capabilities and Constraints
 
-- One static page: name, theme toggle, four links (`LinkedIn`, `GitHub`, `Resume`, `Contact`), an
+- One static page: name, theme toggle, three links (`LinkedIn`, `GitHub`, `Contact`), an
   `Experiences` label, and five experience rows. A styled 404 page and a sitemap. Static export to
   Cloudflare Workers.
 - Light and dark themes, following the system by default, with a toggle that persists.
@@ -62,7 +62,7 @@ self-description. The content is Ali's own and nothing else.
 
 - Work history: `src/data/experiences.ts` (five roles, 2019 to present, with highlights and skills
   kept as data).
-- Resume: `public/resume.pdf`.
+- Resume: `public/resume.pdf`. Still published at `/resume.pdf` but not linked from the page.
 - Education, skills, and achievements: `src/data/education.ts`, `src/data/skills.ts`,
   `src/data/achievements.ts`. Kept as data, not rendered.
 - No projects, testimonials, writing, or case studies exist in the repository. Do not invent them.
@@ -70,8 +70,8 @@ self-description. The content is Ali's own and nothing else.
 ## Product Principles
 
 1. Real content only. Every fact on the page is Ali's and verifiable.
-2. Get out of the way. The page is a fast first impression and a hand-off to the resume, LinkedIn,
-   GitHub, or email.
+2. Get out of the way. The page is a fast first impression and a hand-off to LinkedIn, GitHub, or
+   email.
 3. Small on purpose. Growth is a deliberate decision, not filler added to look complete.
 4. Equal care in both themes and at every width from 320px up.
 

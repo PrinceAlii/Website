@@ -36,7 +36,7 @@ Deliberate differences from the reference:
 96px top padding
 Ali Bonagdaran                          moon/sun    header, 48px
 64px
-LinkedIn  GitHub  Resume  Contact                   link row, 20px
+LinkedIn  GitHub  Contact                           link row, 20px
 80px
 EXPERIENCES                                         label, 20px
 24px
@@ -66,8 +66,7 @@ EXPERIENCES                                         label, 20px
 | --- | ---: | ---: |
 | LinkedIn | 416 | 56.9 |
 | GitHub | 488.9 | 45.97 |
-| Resume | 550.87 | 54.09 |
-| Contact | 620.95 | 53.8 |
+| Contact | 550.87 | 53.8 |
 
 768px: same as desktop inside the 672px column. Name 48px, 337.06px wide.
 
@@ -90,7 +89,7 @@ EXPERIENCES                                         label, 20px
 | --- | ---: | ---: | ---: | ---: |
 | Header | 24 | 96 | 272 | 48 |
 | Name | 24 | 105.28 | 206.73 | 29.44 |
-| Link row | 24 to 282.75 | 208 | - | 20 |
+| Link row | 24 to 212.68 | 208 | - | 20 |
 | Rows 1 to 3 | 24 | 352, 424, 496 | 272 | 48 |
 | Row 4 (Service NSW, role wraps) | 24 | 568 | 272 | 68 |
 | Row 5 | 24 | 660 | 272 | 48 |
@@ -113,7 +112,7 @@ EXPERIENCES                                         label, 20px
 ## 4. Links and label
 
 - Link row: flex, `flex-wrap: wrap` as a safety net only, 16px gap, margin-bottom 80px (`mb-20`). All
-  four links fit on one line at every supported width.
+  three links fit on one line at every supported width.
 - Links: Geist Sans 14px/20px, weight 600, secondary text color, primary on hover. No separators,
   icons, arrows, underlines, pills, or button chrome.
 - `Experiences` label: the only `h2`, rendered uppercase by CSS. Geist Sans 14px/20px, weight 500,
@@ -193,7 +192,6 @@ owners, identify employers only, and do not imply endorsement.
 | --- | --- | --- |
 | LinkedIn | `https://www.linkedin.com/in/alibonagdaran/` | New tab |
 | GitHub | `https://github.com/PrinceAlii` | New tab |
-| Resume | `/resume.pdf` | New tab |
 | Contact | `mailto:alibonagdaran@gmail.com` | Same tab |
 
 New-tab links use `target="_blank"` and `rel="noopener noreferrer"`. `Contact` has neither.
@@ -215,7 +213,7 @@ Data that is not rendered:
 - `src/data/skills.ts`: operating systems, languages, cloud and DevOps, containers, tooling, home lab.
 - `src/data/achievements.ts`: 2nd in NSW IPT (2022 HSC) and an in-progress AWS certification.
 
-The complete visible text of the main page is the name, the four link labels, `Experiences`, and the
+The complete visible text of the main page is the name, the three link labels, `Experiences`, and the
 five company labels, roles, and date ranges.
 
 ## 9. Metadata and assets
@@ -231,7 +229,8 @@ five company labels, roles, and date ranges.
 - `src/app/sitemap.ts` is `force-static` (required by static export) and lists
   `https://www.alib.au/`. `public/robots.txt` allows all and contains
   `Sitemap: https://www.alib.au/sitemap.xml`.
-- `public/resume.pdf` is Ali's real resume. Keep it current.
+- `public/resume.pdf` is Ali's real resume. It is still published at `/resume.pdf` but is not linked
+  from the page. Keep it current.
 - No metadata may mention the reference site or its author.
 
 Fonts are the Geist family from [vercel/geist-font](https://github.com/vercel/geist-font), vendored
@@ -253,7 +252,7 @@ characters, download a new subset with `&text=` set to every character needed.
 ## 10. Accessibility
 
 - One `h1`, one `h2`, one `h3` per experience. The experience list is a real `ul`.
-- Tab order: theme toggle, `LinkedIn`, `GitHub`, `Resume`, `Contact`.
+- Tab order: theme toggle, `LinkedIn`, `GitHub`, `Contact`.
 - Text contrast meets WCAG AA at the grays above.
 - The page works without JavaScript. Only the theme toggle needs it.
 

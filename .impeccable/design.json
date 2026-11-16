@@ -145,7 +145,7 @@
 			"name": "Profile Link",
 			"kind": "nav",
 			"refersTo": "link",
-			"description": "One of the four plain text links under the name.",
+			"description": "One of the three plain text links under the name.",
 			"html": "<a class=\"ds-link\" href=\"#\">LinkedIn</a>",
 			"css": ".ds-link { font-family: var(--font-geist-sans), Arial, sans-serif; font-size: 14px; line-height: 20px; font-weight: 600; color: #4a5565; text-decoration: none; transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1); } .ds-link:hover { color: #101828; } .ds-link:focus-visible { outline: 2px solid #101828; outline-offset: 4px; }"
 		},
@@ -153,8 +153,8 @@
 			"name": "Link Row",
 			"kind": "nav",
 			"refersTo": "link",
-			"description": "The four profile links, 16px apart.",
-			"html": "<div class=\"ds-links\"><a class=\"ds-link\" href=\"#\">LinkedIn</a><a class=\"ds-link\" href=\"#\">GitHub</a><a class=\"ds-link\" href=\"#\">Resume</a><a class=\"ds-link\" href=\"#\">Contact</a></div>",
+			"description": "The three profile links, 16px apart.",
+			"html": "<div class=\"ds-links\"><a class=\"ds-link\" href=\"#\">LinkedIn</a><a class=\"ds-link\" href=\"#\">GitHub</a><a class=\"ds-link\" href=\"#\">Contact</a></div>",
 			"css": ".ds-links { display: flex; flex-wrap: wrap; gap: 16px; } .ds-link { font-family: var(--font-geist-sans), Arial, sans-serif; font-size: 14px; line-height: 20px; font-weight: 600; color: #4a5565; text-decoration: none; transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1); } .ds-link:hover { color: #101828; } .ds-link:focus-visible { outline: 2px solid #101828; outline-offset: 4px; }"
 		},
 		{
@@ -192,7 +192,7 @@
 	],
 	"narrative": {
 		"northStar": "The Calling Card",
-		"overview": "**Creative North Star: \"The Calling Card\"**\n\nThe site is a calling card: small, exact, and taken in within a second. One centered column holds a name, four links, and a record of five roles. There is no prose, no imagery beyond employer marks, and no surface other than the page itself. Everything a visitor needs to judge Ali's path is in names, labels, and dates.\n\nThe mood is crisp and technical. Contrast is high, the palette is pure black and white with a short cool gray scale, and alignment is measured to the pixel. The one expressive note is the name, set in a pixel typeface that reads like an engineer's nameplate. The rest stays in a quiet geometric sans so the name carries the identity alone.\n\nThe layout follows andrewqu.com for spacing, type, and theming. None of its content is used.",
+		"overview": "**Creative North Star: \"The Calling Card\"**\n\nThe site is a calling card: small, exact, and taken in within a second. One centered column holds a name, three links, and a record of five roles. There is no prose, no imagery beyond employer marks, and no surface other than the page itself. Everything a visitor needs to judge Ali's path is in names, labels, and dates.\n\nThe mood is crisp and technical. Contrast is high, the palette is pure black and white with a short cool gray scale, and alignment is measured to the pixel. The one expressive note is the name, set in a pixel typeface that reads like an engineer's nameplate. The rest stays in a quiet geometric sans so the name carries the identity alone.\n\nThe layout follows andrewqu.com for spacing, type, and theming. None of its content is used.",
 		"keyCharacteristics": [
 			"One 672px column, top-aligned, with fixed vertical rhythm (96, 64, 80, 24px).",
 			"Monochrome: white or black page, cool gray text, no accent color.",

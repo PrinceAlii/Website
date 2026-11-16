@@ -24,11 +24,6 @@ export const profile = {
 			newTab: true,
 		},
 		{
-			label: "Resume",
-			href: "/resume.pdf",
-			newTab: true,
-		},
-		{
 			label: "Contact",
 			href: `mailto:${email}`,
 			newTab: false,

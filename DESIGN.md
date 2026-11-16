@@ -69,7 +69,7 @@ components:
 **Creative North Star: "The Calling Card"**
 
 The site is a calling card: small, exact, and taken in within a second. One centered column holds a
-name, four links, and a record of five roles. There is no prose, no imagery beyond employer marks,
+name, three links, and a record of five roles. There is no prose, no imagery beyond employer marks,
 and no surface other than the page itself. Everything a visitor needs to judge Ali's path is in
 names, labels, and dates.
 
@@ -128,7 +128,7 @@ sans keeps everything else neutral and readable.
   48px from 768px up, scaling down so it never wraps on phones.
 - **Title** (500, 16px, 24px): company names in experience rows.
 - **Body** (400, 14px, 20px): roles and dates.
-- **Link** (600, 14px, 20px): the four profile links and the 404 link.
+- **Link** (600, 14px, 20px): the three profile links and the 404 link.
 - **Label** (500, 14px, wide tracking, uppercase): the `Experiences` section label.
 - **Error numeral** (600, Source Serif 4, `clamp(8rem, 42vw, 12rem)`, line-height 1, tight
   tracking): the `404` on the 404 page only. The one serif on the site.

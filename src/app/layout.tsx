@@ -72,8 +72,8 @@ export const metadata: Metadata = {
 	},
 };
 
-// Built from profile data so the structured data cannot drift from the page. Only absolute links
-// are listed; the resume path is not a profile on another site.
+// Built from profile data so the structured data cannot drift from the page. Only https links are
+// listed, which leaves out the mailto Contact link.
 const personJsonLd = {
 	"@context": "https://schema.org",
 	"@type": "Person",

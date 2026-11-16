@@ -7,7 +7,7 @@ in `README.md`.
 ## Project
 
 Ali Bonagdaran's personal website at `https://www.alib.au`: one static page with a name, a theme
-toggle, four links, an `Experiences` label, and five experience rows.
+toggle, three links, an `Experiences` label, and five experience rows.
 
 The layout follows [andrewqu.com](https://www.andrewqu.com/). Match its spacing, typography, and
 themes, using the captures in `specs/reference/`. It is a design guide only, not a template to expand
@@ -25,7 +25,7 @@ When sources disagree, this order wins:
 Structure:
 
 - Header: the name and the theme toggle. Nothing else.
-- Exactly four links, in this order: `LinkedIn`, `GitHub`, `Resume`, `Contact`. `Contact` is a
+- Exactly three links, in this order: `LinkedIn`, `GitHub`, `Contact`. `Contact` is a
   same-tab `mailto:` link and the only email entry point. The other three open in a new tab. Never
   print the email address as page text.
 - Then the `Experiences` label and five experience rows, newest first. The page ends after the last

@@ -6,7 +6,7 @@ numbers below point there.
 ## Structure and content
 
 - [ ] Exactly one `h1` (`Ali Bonagdaran`), one `h2` (`Experiences`), and five `h3` elements.
-- [ ] Exactly four links in the link row, in order, with the destinations and tab behavior in
+- [ ] Exactly three links in the link row, in order, with the destinations and tab behavior in
       section 8.
 - [ ] No `nav`, `footer`, projects, about, skills, education, achievements, or contact section. Nothing
       follows the fifth row.
@@ -26,7 +26,7 @@ At 1440, 768, 390, and 320 wide, 1000 tall:
 - [ ] Every position and size in the section 2 tables matches.
 - [ ] `scrollWidth` equals the viewport width.
 - [ ] The header is 48px and the name does not wrap.
-- [ ] The four links stay on one line.
+- [ ] The three links stay on one line.
 - [ ] 768 and 1440 show full company names and dates in the right column. No phone label is visible.
 - [ ] 390 and 320 show the phone labels, with each date right-aligned on the company line and never
       overlapping it. Roles use the full text width.
@@ -54,7 +54,7 @@ At 1440, 768, 390, and 320 wide, 1000 tall:
 
 ## Accessibility (section 10)
 
-- [ ] Tab order is toggle, `LinkedIn`, `GitHub`, `Resume`, `Contact`, and every focus outline shows.
+- [ ] Tab order is toggle, `LinkedIn`, `GitHub`, `Contact`, and every focus outline shows.
 - [ ] The name has no `aria-label`. The list is labelled by the `Experiences` heading.
 - [ ] Logos have empty alt text, and each company name is exposed once.
 - [ ] Contrast meets WCAG AA. The page is readable and navigable with JavaScript off.

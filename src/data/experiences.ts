@@ -3,26 +3,17 @@ export type LogoKind = "abs" | "commbank" | "service-nsw" | "mcdonalds";
 export type Experience = {
 	company: string;
 	shortCompany?: string;
-	legalName?: string;
 	role: string;
 	location: string;
 	startDate: string;
-	endDate: string | "Present";
-	period: string;
+	endDate: string;
 	logo: LogoKind;
 	highlights: readonly string[];
 	skills: readonly string[];
 };
 
-const formatPeriod = (startDate: string, endDate: string): string => {
-	const startYear = startDate.slice(0, 4);
-	const endYear = endDate === "Present" ? "Present" : endDate.slice(0, 4);
-	return `${startYear} - ${endYear}`;
-};
-
-// Newest first. Full dates are retained even though the page mirrors the
-// reference design's year-only display. Roles and highlights come from the
-// resume and the existing experience collection in this repository.
+// Newest first. Dates are "YYYY-MM" or "Present"; the page shows years only. Highlights and skills
+// are kept as data and not rendered.
 export const experiences: readonly Experience[] = [
 	{
 		company: "Australian Bureau of Statistics",
@@ -31,7 +22,6 @@ export const experiences: readonly Experience[] = [
 		location: "Sydney, NSW",
 		startDate: "2026-02",
 		endDate: "Present",
-		period: formatPeriod("2026-02", "Present"),
 		logo: "abs",
 		highlights: [
 			"Own the day-to-day operation and ongoing development of the Coder Cloud Development Environment on AWS, supporting around 250 daily active users across ECS, EC2 workspace instances, RDS PostgreSQL, and an Application Load Balancer.",
@@ -59,7 +49,6 @@ export const experiences: readonly Experience[] = [
 		location: "Sydney, NSW",
 		startDate: "2025-03",
 		endDate: "2026-02",
-		period: formatPeriod("2025-03", "2026-02"),
 		logo: "abs",
 		highlights: [
 			"Administered Red Hat Enterprise Linux (RHEL) systems in a production on-premises environment, performing patching, configuration management, and routine maintenance.",
@@ -73,12 +62,10 @@ export const experiences: readonly Experience[] = [
 	{
 		company: "Commonwealth Bank of Australia",
 		shortCompany: "CommBank",
-		legalName: "Commonwealth Bank of Australia",
 		role: "Business Banking Associate",
 		location: "Redfern, NSW",
 		startDate: "2024-11",
 		endDate: "2025-06",
-		period: formatPeriod("2024-11", "2025-06"),
 		logo: "commbank",
 		highlights: [
 			"Explained complex banking products clearly to customers with varying levels of financial literacy.",
@@ -98,7 +85,6 @@ export const experiences: readonly Experience[] = [
 		location: "Ryde, NSW",
 		startDate: "2023-03",
 		endDate: "2024-11",
-		period: formatPeriod("2023-03", "2024-11"),
 		logo: "service-nsw",
 		highlights: [
 			"Delivered accurate advice across complex multi-agency transactions, maintaining strict compliance with privacy legislation.",
@@ -112,7 +98,6 @@ export const experiences: readonly Experience[] = [
 		location: "Mount Colah, NSW",
 		startDate: "2019-08",
 		endDate: "2023-03",
-		period: formatPeriod("2019-08", "2023-03"),
 		logo: "mcdonalds",
 		highlights: [
 			"Provided exceptional customer service, resolving customer complaints and concerns.",
@@ -122,3 +107,7 @@ export const experiences: readonly Experience[] = [
 		skills: ["Customer Service", "Complaint Resolution", "Drive-Thru Flow", "Collaboration"],
 	},
 ];
+
+// "2026 - Present", with a spaced hyphen.
+export const formatPeriod = ({ startDate, endDate }: Experience): string =>
+	`${startDate.slice(0, 4)} - ${endDate === "Present" ? endDate : endDate.slice(0, 4)}`;

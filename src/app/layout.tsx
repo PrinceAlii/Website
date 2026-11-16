@@ -1,7 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
+import { ThemeProvider } from "next-themes";
 
-import { ThemeProvider } from "@/components/theme-provider";
 import { profile } from "@/data/profile";
 
 import "./globals.css";
@@ -14,14 +14,6 @@ const geistSans = localFont({
 	fallback: ["Arial", "sans-serif"],
 });
 
-const geistMono = localFont({
-	src: "../fonts/GeistMono-Variable.woff2",
-	variable: "--font-geist-mono",
-	weight: "100 900",
-	display: "swap",
-	fallback: ["ui-monospace", "monospace"],
-});
-
 const geistPixel = localFont({
 	src: "../fonts/GeistPixel-Square.woff2",
 	variable: "--font-geist-pixel-square",
@@ -32,15 +24,15 @@ const geistPixel = localFont({
 
 export const metadata: Metadata = {
 	metadataBase: new URL(profile.siteUrl),
-	title: "Ali Bonagdaran",
+	title: profile.name,
 	description: profile.description,
 	authors: [{ name: profile.name, url: profile.siteUrl }],
 	creator: profile.name,
 	publisher: profile.name,
 	keywords: [
-		"Ali Bonagdaran",
+		profile.name,
 		"DevOps Engineer",
-		"Australian Bureau of Statistics",
+		profile.company,
 		"Cloud Engineer",
 		"Platform Engineer",
 		"Sydney",
@@ -60,24 +52,17 @@ export const metadata: Metadata = {
 		canonical: "/",
 	},
 	openGraph: {
-		title: "Ali Bonagdaran",
+		title: profile.name,
 		description: profile.description,
 		url: profile.siteUrl,
-		siteName: "Ali Bonagdaran",
+		siteName: profile.name,
 		locale: "en_AU",
 		type: "website",
-		images: [
-			{
-				url: "/og.png",
-				width: 1200,
-				height: 630,
-				alt: "Ali Bonagdaran",
-			},
-		],
+		images: [{ url: "/og.png", width: 1200, height: 630, alt: profile.name }],
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Ali Bonagdaran",
+		title: profile.name,
 		description: profile.description,
 		images: ["/og.png"],
 	},
@@ -106,15 +91,11 @@ export const viewport: Viewport = {
 	],
 };
 
-export default function RootLayout({
-	children,
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
 	return (
 		<html
 			lang="en"
-			className={`${geistSans.variable} ${geistMono.variable} ${geistPixel.variable}`}
+			className={`${geistSans.variable} ${geistPixel.variable}`}
 			suppressHydrationWarning
 		>
 			<body className="antialiased">
@@ -125,7 +106,9 @@ export default function RootLayout({
 						__html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c"),
 					}}
 				/>
-				<ThemeProvider>{children}</ThemeProvider>
+				<ThemeProvider attribute="class" storageKey="theme">
+					<main className="mx-auto min-h-screen max-w-2xl px-6 py-24 sm:px-8">{children}</main>
+				</ThemeProvider>
 			</body>
 		</html>
 	);

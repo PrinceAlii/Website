@@ -1,29 +1,10 @@
-export type ProfileLink = {
-	label: string;
-	href: string;
-	newTab: boolean;
-};
-
-export type Profile = {
-	name: string;
-	firstName: string;
-	role: string;
-	company: string;
-	location: string;
-	email: string;
-	siteUrl: string;
-	description: string;
-	links: readonly ProfileLink[];
-};
-
 // All personal details come from Ali's resume, the previous alibo.dev site, and the existing
 // portfolio content in this repository. Do not replace these with placeholder
 // or reference-site content.
 const email = "alibonagdaran@gmail.com";
 
-export const profile: Profile = {
+export const profile = {
 	name: "Ali Bonagdaran",
-	firstName: "Ali",
 	role: "Graduate DevOps Engineer",
 	company: "Australian Bureau of Statistics",
 	location: "Sydney, NSW",

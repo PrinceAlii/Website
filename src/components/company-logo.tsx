@@ -2,63 +2,35 @@ import Image from "next/image";
 
 import type { LogoKind } from "@/data/experiences";
 
-type CompanyLogoProps = {
-	kind: LogoKind;
-};
+// Grayscale image logos. Brightness is tuned per mark so each reads at a similar weight.
+const imageLogos = {
+	commbank: { height: 32, className: "h-7 w-7 brightness-90 dark:brightness-100" },
+	"service-nsw": { height: 32, className: "h-7 w-7" },
+	mcdonalds: { height: 28, className: "h-7 w-auto brightness-75 dark:brightness-100" },
+} as const;
 
-export function CompanyLogo({ kind }: CompanyLogoProps) {
+export function CompanyLogo({ kind }: { kind: LogoKind }) {
 	if (kind === "abs") {
+		// The artwork has a transparent background. Used as a mask, it takes the text color of the
+		// current theme, so it stays readable on both the white and the black page.
+		const mask = "url(/logos/abs.svg) center / contain no-repeat";
 		return (
-			// The artwork has a transparent background. Used as a mask, it takes the text color of the
-			// current theme, so it stays readable on both the white and the black page.
 			<span
 				aria-hidden="true"
 				className="block h-8 w-9 bg-gray-900 transition-colors duration-300 dark:bg-gray-100"
-				style={{
-					maskImage: "url(/logos/abs.svg)",
-					WebkitMaskImage: "url(/logos/abs.svg)",
-					maskRepeat: "no-repeat",
-					WebkitMaskRepeat: "no-repeat",
-					maskPosition: "center",
-					WebkitMaskPosition: "center",
-					maskSize: "contain",
-					WebkitMaskSize: "contain",
-				}}
+				style={{ mask, WebkitMask: mask }}
 			/>
 		);
 	}
 
-	if (kind === "commbank") {
-		return (
-			<Image
-				src="/logos/commbank.svg"
-				alt=""
-				width={32}
-				height={32}
-				className="h-7 w-7 object-contain brightness-90 grayscale dark:brightness-100"
-			/>
-		);
-	}
-
-	if (kind === "service-nsw") {
-		return (
-			<Image
-				src="/logos/service-nsw.svg"
-				alt=""
-				width={32}
-				height={32}
-				className="h-7 w-7 object-contain grayscale"
-			/>
-		);
-	}
-
+	const { height, className } = imageLogos[kind];
 	return (
 		<Image
-			src="/logos/mcdonalds.svg"
+			src={`/logos/${kind}.svg`}
 			alt=""
 			width={32}
-			height={28}
-			className="h-7 w-auto object-contain brightness-75 grayscale dark:brightness-100"
+			height={height}
+			className={`${className} object-contain grayscale`}
 		/>
 	);
 }

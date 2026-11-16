@@ -2,23 +2,16 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Tailwind v3 hex grays, which the reference uses, in place of the v4 oklch defaults. */
 @theme {
-	--color-gray-50: #f9fafb;
 	--color-gray-100: #f3f4f6;
-	--color-gray-200: #e5e7eb;
-	--color-gray-300: #d1d5db;
 	--color-gray-400: #99a1af;
 	--color-gray-500: #6a7282;
 	--color-gray-600: #4a5565;
-	--color-gray-700: #364153;
-	--color-gray-800: #1e2939;
 	--color-gray-900: #101828;
-	--color-gray-950: #030712;
 }
 
 @theme inline {
-	--font-sans: var(--font-geist-sans);
-	--font-mono: var(--font-geist-mono);
 	--font-pixel: var(--font-geist-pixel-square);
 	--default-font-family: var(--font-geist-sans);
 }
@@ -27,27 +20,14 @@
 	body {
 		background-color: var(--color-white);
 		color: var(--color-gray-900);
-		font-family: var(--font-geist-sans), Arial, sans-serif;
-	}
-
-	.dark body {
-		background-color: var(--color-black);
-		color: var(--color-gray-100);
-	}
-
-	html,
-	body {
 		transition:
 			background-color 300ms,
 			color 300ms;
 	}
 
-	a,
-	button {
-		transition:
-			color 300ms,
-			background-color 300ms,
-			border-color 300ms;
+	.dark body {
+		background-color: var(--color-black);
+		color: var(--color-gray-100);
 	}
 
 	a:focus-visible,

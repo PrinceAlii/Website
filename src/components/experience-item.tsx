@@ -1,13 +1,9 @@
 import { CompanyLogo } from "@/components/company-logo";
-import type { Experience } from "@/data/experiences";
-
-type ExperienceItemProps = {
-	experience: Experience;
-};
+import { type Experience, formatPeriod } from "@/data/experiences";
 
 // One grid places the date in both layouts, so it is rendered once. On phones it sits on the
 // company line and the role spans the full width. From sm up it is centered against both lines.
-export function ExperienceItem({ experience }: ExperienceItemProps) {
+export function ExperienceItem({ experience }: { experience: Experience }) {
 	return (
 		<li className="flex items-center gap-4 py-0.5">
 			<div className="flex h-11 w-12 shrink-0 items-center justify-center">
@@ -22,7 +18,7 @@ export function ExperienceItem({ experience }: ExperienceItemProps) {
 					{experience.role}
 				</p>
 				<p className="col-start-2 row-start-1 text-sm text-gray-500 sm:row-span-2">
-					{experience.period}
+					{formatPeriod(experience)}
 				</p>
 			</div>
 		</li>

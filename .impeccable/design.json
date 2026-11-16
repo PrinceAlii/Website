@@ -1,0 +1,251 @@
+{
+	"schemaVersion": 2,
+	"generatedAt": "2026-11-16T13:51:58+00:00",
+	"title": "Design System: Ali Bonagdaran",
+	"extensions": {
+		"colorMeta": {
+			"paper": {
+				"role": "neutral",
+				"displayName": "Paper",
+				"tonalRamp": [
+					"#030712",
+					"#101828",
+					"#364153",
+					"#4a5565",
+					"#6a7282",
+					"#99a1af",
+					"#e5e7eb",
+					"#f3f4f6"
+				]
+			},
+			"void": {
+				"role": "neutral",
+				"displayName": "Void",
+				"tonalRamp": [
+					"#030712",
+					"#101828",
+					"#364153",
+					"#4a5565",
+					"#6a7282",
+					"#99a1af",
+					"#e5e7eb",
+					"#f3f4f6"
+				]
+			},
+			"ink": {
+				"role": "neutral",
+				"displayName": "Ink",
+				"tonalRamp": [
+					"#030712",
+					"#101828",
+					"#364153",
+					"#4a5565",
+					"#6a7282",
+					"#99a1af",
+					"#e5e7eb",
+					"#f3f4f6"
+				]
+			},
+			"frost": {
+				"role": "neutral",
+				"displayName": "Frost",
+				"tonalRamp": [
+					"#030712",
+					"#101828",
+					"#364153",
+					"#4a5565",
+					"#6a7282",
+					"#99a1af",
+					"#e5e7eb",
+					"#f3f4f6"
+				]
+			},
+			"slate": {
+				"role": "neutral",
+				"displayName": "Slate",
+				"tonalRamp": [
+					"#030712",
+					"#101828",
+					"#364153",
+					"#4a5565",
+					"#6a7282",
+					"#99a1af",
+					"#e5e7eb",
+					"#f3f4f6"
+				]
+			},
+			"steel": {
+				"role": "neutral",
+				"displayName": "Steel",
+				"tonalRamp": [
+					"#030712",
+					"#101828",
+					"#364153",
+					"#4a5565",
+					"#6a7282",
+					"#99a1af",
+					"#e5e7eb",
+					"#f3f4f6"
+				]
+			},
+			"ash": {
+				"role": "neutral",
+				"displayName": "Ash",
+				"tonalRamp": [
+					"#030712",
+					"#101828",
+					"#364153",
+					"#4a5565",
+					"#6a7282",
+					"#99a1af",
+					"#e5e7eb",
+					"#f3f4f6"
+				]
+			}
+		},
+		"typographyMeta": {
+			"display": {
+				"displayName": "Display",
+				"purpose": "The name only."
+			},
+			"title": {
+				"displayName": "Title",
+				"purpose": "Company names in experience rows."
+			},
+			"body": {
+				"displayName": "Body",
+				"purpose": "Roles and dates."
+			},
+			"link": {
+				"displayName": "Link",
+				"purpose": "Profile links and the 404 link."
+			},
+			"label": {
+				"displayName": "Label",
+				"purpose": "The uppercase Experiences label."
+			}
+		},
+		"shadows": [],
+		"motion": [
+			{
+				"name": "color-shift",
+				"value": "300ms cubic-bezier(0.4, 0, 0.2, 1)",
+				"purpose": "Link and toggle hover color, and the theme switch. Reduced to 0.01ms under prefers-reduced-motion."
+			}
+		],
+		"breakpoints": [
+			{
+				"name": "sm",
+				"value": "640px"
+			}
+		]
+	},
+	"components": [
+		{
+			"name": "Profile Link",
+			"kind": "nav",
+			"refersTo": "link",
+			"description": "One of the four plain text links under the name.",
+			"html": "<a class=\"ds-link\" href=\"#\">LinkedIn</a>",
+			"css": ".ds-link { font-family: var(--font-geist-sans), Arial, sans-serif; font-size: 14px; line-height: 20px; font-weight: 600; color: #4a5565; text-decoration: none; transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1); } .ds-link:hover { color: #101828; } .ds-link:focus-visible { outline: 2px solid #101828; outline-offset: 4px; }"
+		},
+		{
+			"name": "Link Row",
+			"kind": "nav",
+			"refersTo": "link",
+			"description": "The four profile links, 16px apart.",
+			"html": "<div class=\"ds-links\"><a class=\"ds-link\" href=\"#\">LinkedIn</a><a class=\"ds-link\" href=\"#\">GitHub</a><a class=\"ds-link\" href=\"#\">Resume</a><a class=\"ds-link\" href=\"#\">Contact</a></div>",
+			"css": ".ds-links { display: flex; flex-wrap: wrap; gap: 16px; } .ds-link { font-family: var(--font-geist-sans), Arial, sans-serif; font-size: 14px; line-height: 20px; font-weight: 600; color: #4a5565; text-decoration: none; transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1); } .ds-link:hover { color: #101828; } .ds-link:focus-visible { outline: 2px solid #101828; outline-offset: 4px; }"
+		},
+		{
+			"name": "Theme Toggle",
+			"kind": "button",
+			"refersTo": "theme-toggle",
+			"description": "Bare icon button that switches light and dark.",
+			"html": "<button class=\"ds-toggle\" type=\"button\" aria-label=\"Toggle theme\"><svg width=\"20\" height=\"20\" fill=\"none\" viewBox=\"0 0 24 24\" stroke-width=\"1.5\" stroke=\"currentColor\" aria-hidden=\"true\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M21.752 15.002A9.718 9.718 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z\"/></svg></button>",
+			"css": ".ds-toggle { display: inline-flex; padding: 8px; border: 0; background: none; color: #4a5565; cursor: pointer; transition: color 300ms cubic-bezier(0.4, 0, 0.2, 1); } .ds-toggle:hover { color: #101828; } .ds-toggle:focus-visible { outline: 2px solid #101828; outline-offset: 4px; }"
+		},
+		{
+			"name": "Name",
+			"kind": "custom",
+			"refersTo": "display",
+			"description": "The pixel-font name in the header.",
+			"html": "<h1 class=\"ds-name\">Ali Bonagdaran</h1>",
+			"css": ".ds-name { margin: 0; font-family: var(--font-geist-pixel-square), ui-monospace, monospace; font-size: clamp(1.75rem, 9.2vw, 3rem); font-weight: 500; line-height: 1; letter-spacing: -0.025em; color: #101828; }"
+		},
+		{
+			"name": "Section Label",
+			"kind": "custom",
+			"refersTo": "label",
+			"description": "The uppercase Experiences label.",
+			"html": "<h2 class=\"ds-label\">Experiences</h2>",
+			"css": ".ds-label { margin: 0; font-family: var(--font-geist-sans), Arial, sans-serif; font-size: 14px; line-height: 20px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; color: #6a7282; }"
+		},
+		{
+			"name": "Experience Row",
+			"kind": "custom",
+			"refersTo": "experience-row",
+			"description": "Logo slot, company, role, and date.",
+			"html": "<div class=\"ds-row\"><div class=\"ds-logo\"><span class=\"ds-logo-mark\"></span></div><div class=\"ds-text\"><span class=\"ds-company\">Australian Bureau of Statistics</span><span class=\"ds-role\">Graduate DevOps Engineer</span><span class=\"ds-date\">2026 - Present</span></div></div>",
+			"css": ".ds-row { display: flex; align-items: center; gap: 16px; padding: 2px 0; font-family: var(--font-geist-sans), Arial, sans-serif; } .ds-logo { display: flex; width: 48px; height: 44px; flex-shrink: 0; align-items: center; justify-content: center; } .ds-logo-mark { width: 28px; height: 28px; background: #101828; } .ds-text { display: grid; flex: 1; min-width: 0; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 8px; } .ds-company { grid-column: 1; grid-row: 1; font-size: 16px; line-height: 24px; font-weight: 500; color: #101828; } .ds-role { grid-column: 1; grid-row: 2; font-size: 14px; line-height: 20px; color: #4a5565; } .ds-date { grid-column: 2; grid-row: 1 / span 2; font-size: 14px; line-height: 20px; color: #6a7282; }"
+		}
+	],
+	"narrative": {
+		"northStar": "The Calling Card",
+		"overview": "**Creative North Star: \"The Calling Card\"**\n\nThe site is a calling card: small, exact, and taken in within a second. One centered column holds a name, four links, and a record of five roles. There is no prose, no imagery beyond employer marks, and no surface other than the page itself. Everything a visitor needs to judge Ali's path is in names, labels, and dates.\n\nThe mood is crisp and technical. Contrast is high, the palette is pure black and white with a short cool gray scale, and alignment is measured to the pixel. The one expressive note is the name, set in a pixel typeface that reads like an engineer's nameplate. The rest stays in a quiet geometric sans so the name carries the identity alone.\n\nThe layout follows andrewqu.com for spacing, type, and theming. None of its content is used.",
+		"keyCharacteristics": [
+			"One 672px column, top-aligned, with fixed vertical rhythm (96, 64, 80, 24px).",
+			"Monochrome: white or black page, cool gray text, no accent color.",
+			"A pixel-font name as the single expressive element.",
+			"Equal care in light and dark themes.",
+			"Flat. No borders, cards, shadows, or separators.",
+			"Motion limited to 300ms color transitions and the theme switch."
+		],
+		"rules": [
+			{
+				"name": "The No Accent Rule",
+				"body": "There is no brand color. Hierarchy comes from the three gray steps and font weight, never from hue.",
+				"section": "colors"
+			},
+			{
+				"name": "The Three Steps Rule",
+				"body": "Text uses exactly three levels per theme: primary, secondary, muted. A new element takes one of them; it never introduces a fourth gray.",
+				"section": "colors"
+			},
+			{
+				"name": "The Nameplate Rule",
+				"body": "Geist Pixel Square belongs to the name. It may appear sparingly in a future section heading if the site grows, but never in body text, links, labels, or dates.",
+				"section": "typography"
+			},
+			{
+				"name": "The No Prose Rule",
+				"body": "Type sizes stop at 16px below the name because there is nothing longer than a role title to set. Do not add a size for paragraphs.",
+				"section": "typography"
+			},
+			{
+				"name": "The No Overflow Rule",
+				"body": "The page never scrolls horizontally, from 320px to 1440px.",
+				"section": "layout"
+			},
+			{
+				"name": "The Flat Page Rule",
+				"body": "Nothing sits on a surface. If an element seems to need a card or divider, remove it or use spacing instead.",
+				"section": "elevation"
+			}
+		],
+		"dos": [
+			"Do keep every text color to the three steps: Ink/Frost, Slate/Steel, Ash.",
+			"Do keep the 96 / 64 / 80 / 24px rhythm and 48px rows when adding anything.",
+			"Do check both themes at 320, 390, 768, and 1440px for every change.",
+			"Do keep logos grayscale and tune brightness per mark so they read at a similar weight.",
+			"Do keep the visible focus outline on every interactive element."
+		],
+		"donts": [
+			"Don't add an accent color, gradient, glow, or shadow.",
+			"Don't add cards, borders, separators, pills, or background tints.",
+			"Don't use Geist Pixel Square outside the name, except sparingly for a future section heading.",
+			"Don't animate the name or add load, scroll, or hover motion beyond 300ms color changes.",
+			"Don't add paragraphs, taglines, or helper text to the page."
+		]
+	}
+}

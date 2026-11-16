@@ -1,0 +1,20 @@
+# dependencies
+node_modules/
+.pnpm-store/
+
+# next.js
+.next/
+out/
+next-env.d.ts
+
+# local tooling and os files
+.vercel/
+.playwright-cli/
+.DS_Store
+*.log
+*.tsbuildinfo
+coverage/
+.env*.local
+
+# Agent instructions are part of this project and must stay tracked.
+!AGENTS.md

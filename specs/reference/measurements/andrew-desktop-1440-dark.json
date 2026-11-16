@@ -1,0 +1,997 @@
+{
+  "label": "desktop-1440",
+  "width": 1440,
+  "scheme": "dark",
+  "data": {
+    "viewport": {
+      "w": 1440,
+      "h": 1000
+    },
+    "scroll": {
+      "w": 1440,
+      "h": 1000
+    },
+    "body": {
+      "label": "body",
+      "rect": {
+        "x": 0,
+        "y": 0,
+        "w": 1440,
+        "h": 1000
+      },
+      "font": "400 16px/24px Geist, \"Geist Fallback\"",
+      "letterSpacing": "normal",
+      "color": "lab(96.1596 -0.0823438 -1.13575)",
+      "bg": "rgb(0, 0, 0)",
+      "padding": "0px",
+      "margin": "0px",
+      "gap": "normal",
+      "display": "block",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "borderRadius": "0px"
+    },
+    "root": {
+      "label": "root",
+      "rect": {
+        "x": 384,
+        "y": 0,
+        "w": 672,
+        "h": 1000
+      },
+      "font": "400 16px/24px Geist, \"Geist Fallback\"",
+      "letterSpacing": "normal",
+      "color": "lab(96.1596 -0.0823438 -1.13575)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "padding": "96px 32px",
+      "margin": "0px 384px",
+      "gap": "normal",
+      "display": "block",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "borderRadius": "0px"
+    },
+    "header": {
+      "label": "header",
+      "rect": {
+        "x": 416,
+        "y": 96,
+        "w": 608,
+        "h": 48
+      },
+      "font": "400 16px/24px Geist, \"Geist Fallback\"",
+      "letterSpacing": "normal",
+      "color": "lab(96.1596 -0.0823438 -1.13575)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "padding": "0px",
+      "margin": "0px 0px 64px",
+      "gap": "normal",
+      "display": "flex",
+      "alignItems": "center",
+      "justifyContent": "space-between",
+      "borderRadius": "0px"
+    },
+    "name": {
+      "label": "name wrapper",
+      "rect": {
+        "x": 416,
+        "y": 96,
+        "w": 237.33,
+        "h": 48
+      },
+      "font": "400 16px/24px GeistPixelSquare, \"Geist Mono\", ui-monospace, SFMono-Regular, \"Roboto Mono\", Menlo, Monaco, \"Liberation Mono\", \"DejaVu Sans Mono\", \"Courier New\", monospace",
+      "letterSpacing": "normal",
+      "color": "lab(96.1596 -0.0823438 -1.13575)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "padding": "0px",
+      "margin": "0px",
+      "gap": "normal",
+      "display": "grid",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "borderRadius": "0px"
+    },
+    "nameFront": {
+      "label": "name front",
+      "rect": {
+        "x": 416,
+        "y": 96,
+        "w": 237.33,
+        "h": 48
+      },
+      "font": "500 48px/48px GeistPixelSquare, \"Geist Mono\", ui-monospace, SFMono-Regular, \"Roboto Mono\", Menlo, Monaco, \"Liberation Mono\", \"DejaVu Sans Mono\", \"Courier New\", monospace",
+      "letterSpacing": "-1.2px",
+      "color": "lab(96.1596 -0.0823438 -1.13575)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "padding": "0px",
+      "margin": "0px",
+      "gap": "normal",
+      "display": "block",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "borderRadius": "0px"
+    },
+    "toggle": {
+      "label": "theme toggle",
+      "rect": {
+        "x": 988,
+        "y": 102,
+        "w": 36,
+        "h": 36
+      },
+      "font": "400 16px/24px Geist, \"Geist Fallback\"",
+      "letterSpacing": "normal",
+      "color": "lab(65.9269 -0.832707 -8.17473)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "padding": "8px",
+      "margin": "0px",
+      "gap": "normal",
+      "display": "block",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "borderRadius": "0px"
+    },
+    "linksSection": {
+      "label": "links section",
+      "rect": {
+        "x": 416,
+        "y": 208,
+        "w": 608,
+        "h": 20
+      },
+      "font": "400 16px/24px Geist, \"Geist Fallback\"",
+      "letterSpacing": "normal",
+      "color": "lab(96.1596 -0.0823438 -1.13575)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "padding": "0px",
+      "margin": "0px 0px 80px",
+      "gap": "normal",
+      "display": "block",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "borderRadius": "0px"
+    },
+    "links": [
+      {
+        "label": "link 1",
+        "rect": {
+          "x": 416,
+          "y": 208,
+          "w": 41.53,
+          "h": 20
+        },
+        "font": "600 14px/20px Geist, \"Geist Fallback\"",
+        "letterSpacing": "normal",
+        "color": "lab(65.9269 -0.832707 -8.17473)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "margin": "0px",
+        "gap": "normal",
+        "display": "block",
+        "alignItems": "normal",
+        "justifyContent": "normal",
+        "borderRadius": "0px",
+        "text": "Social",
+        "href": "https://twitter.com/andrewqu"
+      },
+      {
+        "label": "link 2",
+        "rect": {
+          "x": 473.53,
+          "y": 208,
+          "w": 35.16,
+          "h": 20
+        },
+        "font": "600 14px/20px Geist, \"Geist Fallback\"",
+        "letterSpacing": "normal",
+        "color": "lab(65.9269 -0.832707 -8.17473)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "margin": "0px",
+        "gap": "normal",
+        "display": "block",
+        "alignItems": "normal",
+        "justifyContent": "normal",
+        "borderRadius": "0px",
+        "text": "Code",
+        "href": "https://github.com/quuu"
+      },
+      {
+        "label": "link 3",
+        "rect": {
+          "x": 524.69,
+          "y": 208,
+          "w": 83.48,
+          "h": 20
+        },
+        "font": "600 14px/20px Geist, \"Geist Fallback\"",
+        "letterSpacing": "normal",
+        "color": "lab(65.9269 -0.832707 -8.17473)",
+        "bg": "rgba(0, 0, 0, 0)",
+        "padding": "0px",
+        "margin": "0px",
+        "gap": "normal",
+        "display": "block",
+        "alignItems": "normal",
+        "justifyContent": "normal",
+        "borderRadius": "0px",
+        "text": "Professional",
+        "href": "https://linkedin.com/in/andrew-qu"
+      }
+    ],
+    "h2": {
+      "label": "experiences heading",
+      "rect": {
+        "x": 416,
+        "y": 308,
+        "w": 608,
+        "h": 20
+      },
+      "font": "500 14px/20px Geist, \"Geist Fallback\"",
+      "letterSpacing": "0.7px",
+      "color": "lab(47.7841 -0.393182 -10.0268)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "padding": "0px",
+      "margin": "0px 0px 24px",
+      "gap": "normal",
+      "display": "block",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "borderRadius": "0px"
+    },
+    "list": {
+      "label": "experience list",
+      "rect": {
+        "x": 416,
+        "y": 352,
+        "w": 608,
+        "h": 264
+      },
+      "font": "400 16px/24px Geist, \"Geist Fallback\"",
+      "letterSpacing": "normal",
+      "color": "lab(96.1596 -0.0823438 -1.13575)",
+      "bg": "rgba(0, 0, 0, 0)",
+      "padding": "0px",
+      "margin": "0px",
+      "gap": "normal",
+      "display": "block",
+      "alignItems": "normal",
+      "justifyContent": "normal",
+      "borderRadius": "0px"
+    },
+    "rows": [
+      {
+        "index": 1,
+        "row": {
+          "label": "row 1",
+          "rect": {
+            "x": 416,
+            "y": 352,
+            "w": 608,
+            "h": 48
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px 0px 24px",
+          "gap": "16px",
+          "display": "flex",
+          "alignItems": "flow-start",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "icon": {
+          "label": "row 1 icon",
+          "rect": {
+            "x": 416,
+            "y": 352,
+            "w": 48,
+            "h": 48
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "borderRadius": "3.35544e+07px"
+        },
+        "body": {
+          "label": "row 1 body",
+          "rect": {
+            "x": 480,
+            "y": 352,
+            "w": 544,
+            "h": 48
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "headerLine": {
+          "label": "row 1 header line",
+          "rect": {
+            "x": 480,
+            "y": 352,
+            "w": 544,
+            "h": 44
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "space-between",
+          "borderRadius": "0px"
+        },
+        "companyLine": {
+          "label": "row 1 company line",
+          "rect": {
+            "x": 480,
+            "y": 352,
+            "w": 439.58,
+            "h": 24
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "center",
+          "justifyContent": "space-between",
+          "borderRadius": "0px"
+        },
+        "company": {
+          "label": "row 1 company",
+          "rect": {
+            "x": 480,
+            "y": 352,
+            "w": 439.58,
+            "h": 24
+          },
+          "font": "500 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "mobileDate": {
+          "label": "row 1 mobile date",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "font": "400 14px/20px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(47.7841 -0.393182 -10.0268)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "none",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "role": {
+          "label": "row 1 role",
+          "rect": {
+            "x": 480,
+            "y": 376,
+            "w": 439.58,
+            "h": 20
+          },
+          "font": "400 14px/20px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(65.9269 -0.832707 -8.17473)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "desktopDate": {
+          "label": "row 1 desktop date",
+          "rect": {
+            "x": 919.58,
+            "y": 364,
+            "w": 104.42,
+            "h": 20
+          },
+          "font": "400 14px/20px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(47.7841 -0.393182 -10.0268)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        }
+      },
+      {
+        "index": 2,
+        "row": {
+          "label": "row 2",
+          "rect": {
+            "x": 416,
+            "y": 424,
+            "w": 608,
+            "h": 48
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px 0px 24px",
+          "gap": "16px",
+          "display": "flex",
+          "alignItems": "flow-start",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "icon": {
+          "label": "row 2 icon",
+          "rect": {
+            "x": 416,
+            "y": 424,
+            "w": 48,
+            "h": 48
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "borderRadius": "3.35544e+07px"
+        },
+        "body": {
+          "label": "row 2 body",
+          "rect": {
+            "x": 480,
+            "y": 424,
+            "w": 544,
+            "h": 48
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "headerLine": {
+          "label": "row 2 header line",
+          "rect": {
+            "x": 480,
+            "y": 424,
+            "w": 544,
+            "h": 44
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "space-between",
+          "borderRadius": "0px"
+        },
+        "companyLine": {
+          "label": "row 2 company line",
+          "rect": {
+            "x": 480,
+            "y": 424,
+            "w": 454,
+            "h": 24
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "center",
+          "justifyContent": "space-between",
+          "borderRadius": "0px"
+        },
+        "company": {
+          "label": "row 2 company",
+          "rect": {
+            "x": 480,
+            "y": 424,
+            "w": 454,
+            "h": 24
+          },
+          "font": "500 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "mobileDate": {
+          "label": "row 2 mobile date",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "font": "400 14px/20px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(47.7841 -0.393182 -10.0268)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "none",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "role": {
+          "label": "row 2 role",
+          "rect": {
+            "x": 480,
+            "y": 448,
+            "w": 454,
+            "h": 20
+          },
+          "font": "400 14px/20px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(65.9269 -0.832707 -8.17473)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "desktopDate": {
+          "label": "row 2 desktop date",
+          "rect": {
+            "x": 934,
+            "y": 436,
+            "w": 90,
+            "h": 20
+          },
+          "font": "400 14px/20px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(47.7841 -0.393182 -10.0268)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        }
+      },
+      {
+        "index": 3,
+        "row": {
+          "label": "row 3",
+          "rect": {
+            "x": 416,
+            "y": 496,
+            "w": 608,
+            "h": 48
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px 0px 24px",
+          "gap": "16px",
+          "display": "flex",
+          "alignItems": "flow-start",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "icon": {
+          "label": "row 3 icon",
+          "rect": {
+            "x": 416,
+            "y": 496,
+            "w": 48,
+            "h": 48
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "borderRadius": "3.35544e+07px"
+        },
+        "body": {
+          "label": "row 3 body",
+          "rect": {
+            "x": 480,
+            "y": 496,
+            "w": 544,
+            "h": 48
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "headerLine": {
+          "label": "row 3 header line",
+          "rect": {
+            "x": 480,
+            "y": 496,
+            "w": 544,
+            "h": 44
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "space-between",
+          "borderRadius": "0px"
+        },
+        "companyLine": {
+          "label": "row 3 company line",
+          "rect": {
+            "x": 480,
+            "y": 496,
+            "w": 457.53,
+            "h": 24
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "center",
+          "justifyContent": "space-between",
+          "borderRadius": "0px"
+        },
+        "company": {
+          "label": "row 3 company",
+          "rect": {
+            "x": 480,
+            "y": 496,
+            "w": 457.53,
+            "h": 24
+          },
+          "font": "500 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "mobileDate": {
+          "label": "row 3 mobile date",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "font": "400 14px/20px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(47.7841 -0.393182 -10.0268)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "none",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "role": {
+          "label": "row 3 role",
+          "rect": {
+            "x": 480,
+            "y": 520,
+            "w": 457.53,
+            "h": 20
+          },
+          "font": "400 14px/20px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(65.9269 -0.832707 -8.17473)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "desktopDate": {
+          "label": "row 3 desktop date",
+          "rect": {
+            "x": 937.53,
+            "y": 508,
+            "w": 86.47,
+            "h": 20
+          },
+          "font": "400 14px/20px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(47.7841 -0.393182 -10.0268)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        }
+      },
+      {
+        "index": 4,
+        "row": {
+          "label": "row 4",
+          "rect": {
+            "x": 416,
+            "y": 568,
+            "w": 608,
+            "h": 48
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "16px",
+          "display": "flex",
+          "alignItems": "flow-start",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "icon": {
+          "label": "row 4 icon",
+          "rect": {
+            "x": 416,
+            "y": 568,
+            "w": 48,
+            "h": 48
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "center",
+          "borderRadius": "3.35544e+07px"
+        },
+        "body": {
+          "label": "row 4 body",
+          "rect": {
+            "x": 480,
+            "y": 568,
+            "w": 544,
+            "h": 48
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "headerLine": {
+          "label": "row 4 header line",
+          "rect": {
+            "x": 480,
+            "y": 568,
+            "w": 544,
+            "h": 44
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "flex",
+          "alignItems": "center",
+          "justifyContent": "space-between",
+          "borderRadius": "0px"
+        },
+        "companyLine": {
+          "label": "row 4 company line",
+          "rect": {
+            "x": 480,
+            "y": 568,
+            "w": 456.55,
+            "h": 24
+          },
+          "font": "400 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "center",
+          "justifyContent": "space-between",
+          "borderRadius": "0px"
+        },
+        "company": {
+          "label": "row 4 company",
+          "rect": {
+            "x": 480,
+            "y": 568,
+            "w": 456.55,
+            "h": 24
+          },
+          "font": "500 16px/24px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(96.1596 -0.0823438 -1.13575)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "mobileDate": {
+          "label": "row 4 mobile date",
+          "rect": {
+            "x": 0,
+            "y": 0,
+            "w": 0,
+            "h": 0
+          },
+          "font": "400 14px/20px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(47.7841 -0.393182 -10.0268)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "none",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "role": {
+          "label": "row 4 role",
+          "rect": {
+            "x": 480,
+            "y": 592,
+            "w": 456.55,
+            "h": 20
+          },
+          "font": "400 14px/20px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(65.9269 -0.832707 -8.17473)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        },
+        "desktopDate": {
+          "label": "row 4 desktop date",
+          "rect": {
+            "x": 936.55,
+            "y": 580,
+            "w": 87.45,
+            "h": 20
+          },
+          "font": "400 14px/20px Geist, \"Geist Fallback\"",
+          "letterSpacing": "normal",
+          "color": "lab(47.7841 -0.393182 -10.0268)",
+          "bg": "rgba(0, 0, 0, 0)",
+          "padding": "0px",
+          "margin": "0px",
+          "gap": "normal",
+          "display": "block",
+          "alignItems": "normal",
+          "justifyContent": "normal",
+          "borderRadius": "0px"
+        }
+      }
+    ]
+  }
+}

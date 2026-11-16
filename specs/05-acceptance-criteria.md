@@ -29,7 +29,7 @@ device scale factor 1. Reference values come from the captures in `specs/referen
       `Contact` at `x=620.95` (53.8 wide).
 - [ ] `Experiences` label is at `y=308`, 20px tall, with 24px bottom margin.
 - [ ] Experience rows start at `y=352, 424, 496, 568, 640`.
-- [ ] Each row is 48px tall with a 48px logo slot and a 16px gap to the text block.
+- [ ] Each row is 48px tall with a 48px wide logo slot and a 16px gap to the text block.
 - [ ] Text block starts at `x=480`.
 - [ ] Desktop date is vertically centered against the company and role block and right-aligned.
 - [ ] Dates read `2026 - Present`, `2025 - 2026`, `2024 - 2025`, `2023 - 2024`, and

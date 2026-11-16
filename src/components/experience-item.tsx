@@ -9,11 +9,11 @@ type ExperienceItemProps = {
 // company line and the role spans the full width. From sm up it is centered against both lines.
 export function ExperienceItem({ experience }: ExperienceItemProps) {
 	return (
-		<li className="flex items-start gap-4">
-			<div className="flex h-12 w-12 shrink-0 items-center justify-center">
+		<li className="flex items-center gap-4 py-0.5">
+			<div className="flex h-11 w-12 shrink-0 items-center justify-center">
 				<CompanyLogo kind={experience.logo} />
 			</div>
-			<div className="grid min-w-0 flex-1 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-2 pb-1">
+			<div className="grid min-w-0 flex-1 grid-cols-[minmax(0,1fr)_auto] items-center gap-x-2">
 				<h3 className="col-start-1 row-start-1 font-medium text-gray-900 dark:text-gray-100">
 					<span className="sm:hidden">{experience.shortCompany ?? experience.company}</span>
 					<span className="hidden sm:inline">{experience.company}</span>

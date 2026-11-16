@@ -111,11 +111,11 @@ the row ends at `x=296` at most.
 
 ## 5. Experience rows
 
-Each row is a list item with a 48px logo slot and a flexible text block.
+Each row is a list item with a 48px wide, 44px tall logo slot and a flexible text block.
 
 - Row: `display: flex; align-items: flex-start; gap: 16px;`
 - List: vertical stack with `24px` gaps.
-- Logo slot: `48px × 48px`, `flex-shrink: 0`, contents centered.
+- Logo slot: `48px × 44px`, `flex-shrink: 0`, contents centered. The row has 2px of vertical padding so the slot and the 44px text block share one center line.
 - Text starts at `x = 88px` on mobile (24px page padding + 48px icon + 16px gap) and
   `x = 480px` on desktop (416 + 48 + 16).
 - Company: Geist Sans, `16px / 24px`, weight `500`, color `#101828` / `#f3f4f6`.
@@ -165,7 +165,7 @@ Each row is a list item with a 48px logo slot and a flexible text block.
 | Row 3 | 24 | 496 | 342 | 48 |
 | Row 4 | 24 | 568 | 342 | 48 |
 | Row 5 | 24 | 640 | 342 | 48 |
-| Logo slot | 24 | row top | 48 | 48 |
+| Logo slot | 24 | row top + 2 | 48 | 44 |
 | Text block | 88 | row top | 278 | - |
 | Date (row 1) | 262.05 | 354 | 103.95 | 20 |
 
@@ -204,7 +204,7 @@ Each row is a list item with a 48px logo slot and a flexible text block.
 Logos identify employers. They are not decoration:
 
 - All marks sit in a 48px centered slot.
-- CommBank, Service NSW, and McDonald's: grayscale, approximately 28px tall.
+- CommBank, Service NSW, and McDonald's: grayscale, approximately 28px tall. CommBank and McDonald's are darkened in light mode (`brightness-75`).
 - ABS: no backing. The artwork is white on a transparent background, so it is used as a CSS mask (36px wide, 32px tall) filled with `#101828` in light mode and `#f3f4f6` in dark mode.
 - McDonald's keeps its natural aspect ratio (`height: 28px`, width auto).
 - Logos are decorative (`alt=""`) because the company name is adjacent.

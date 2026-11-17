@@ -1,6 +1,6 @@
 ---
 name: Ali Bonagdaran
-description: A one-column, monochrome personal page with a pixel-font name and a plain record of work.
+description: A monochrome personal page with a pixel-font name and blue text selection.
 colors:
   paper: "#ffffff"
   void: "#000000"
@@ -9,11 +9,15 @@ colors:
   slate: "#4a5565"
   steel: "#99a1af"
   ash: "#6a7282"
+  selection-light: "#bfdbfe"
+  selection-dark: "#365f8b"
+  selection-ink: "#101828"
+  selection-frost: "#f3f4f6"
 typography:
   display:
-    fontFamily: "Geist Pixel Square, ui-monospace, monospace"
+    fontFamily: "Lower Pixel, ui-monospace, monospace"
     fontSize: "clamp(1.75rem, 9.2vw, 3rem)"
-    fontWeight: 500
+    fontWeight: 400
     lineHeight: 1
     letterSpacing: "-0.025em"
   title:
@@ -69,29 +73,30 @@ components:
 **Creative North Star: "The Calling Card"**
 
 The site is a calling card: small, exact, and taken in within a second. One centered column holds a
-name, three links, and a record of five roles. There is no prose, no imagery beyond employer marks,
-and no surface other than the page itself. Everything a visitor needs to judge Ali's path is in
-names, labels, and dates.
+name, three links, and four employer rows covering five roles. There is no prose, no imagery beyond
+employer marks, and no surface other than the page itself. Everything a visitor needs to judge Ali's
+path is in names, labels, and dates.
 
 The mood is crisp and technical. Contrast is high, the palette is pure black and white with a short
-cool gray scale, and alignment is measured to the pixel. The one expressive note is the name, set in
-a pixel typeface that reads like an engineer's nameplate. The rest stays in a quiet geometric sans so
-the name carries the identity alone.
+cool gray scale, and alignment is measured to the pixel. The name and the 404 message use Lower
+Pixel. The rest stays in a quiet geometric sans. A restrained blue appears only when visitors select
+text.
 
 The layout follows andrewqu.com for spacing, type, and theming. None of its content is used.
 
 **Key Characteristics:**
 
 - One 672px column, top-aligned, with fixed vertical rhythm (96, 64, 80, 24px).
-- Monochrome: white or black page, cool gray text, no accent color.
-- A pixel-font name as the single expressive element.
+- Monochrome: white or black page and cool gray text, with blue reserved for text selection.
+- Lower Pixel on the name and the 404 message.
 - Equal care in light and dark themes.
 - Flat. No borders, cards, shadows, or separators.
 - Motion limited to 300ms color transitions and the theme switch.
 
 ## Colors
 
-A strict monochrome system: a pure page color and three steps of cool gray text, inverted for dark.
+A neutral system: a pure page color and three steps of cool gray text, with selection blue in both
+themes.
 
 ### Neutral
 
@@ -102,41 +107,44 @@ A strict monochrome system: a pure page color and three steps of cool gray text,
 - **Frost** (`frost`): the same roles as Ink in dark mode.
 - **Slate** (`slate`): secondary text in light mode: roles, links, and the toggle at rest.
 - **Steel** (`steel`): the same roles as Slate in dark mode.
-- **Ash** (`ash`): muted text in both themes: the `Experiences` label and dates.
+- **Ash** (`ash`): muted text in both themes: the `Experience` label and dates.
+- **Selection blue** (`selection-light`, `selection-dark`): selected-text background in each theme.
+  Selected text uses Ink in light mode and Frost in dark mode.
 
 ### Named Rules
 
-**The No Accent Rule.** There is no brand color. Hierarchy comes from the three gray steps and font
-weight, never from hue.
+**The Selection Rule.** Blue is reserved for selected text. It does not appear in links, logos, or
+other page states.
 
 **The Three Steps Rule.** Text uses exactly three levels per theme: primary, secondary, muted. A new
 element takes one of them; it never introduces a fourth gray.
 
 ## Typography
 
-**Display Font:** Geist Pixel Square (with ui-monospace, monospace)
+**Display Font:** Lower Pixel (with ui-monospace, monospace)
 **Body Font:** Geist (with Arial, sans-serif)
 **404 Font:** Source Serif 4 Semibold (subset, with Georgia, serif), a free stand-in for Larish Neue,
 for the 404 numeral only
 
-**Character:** a pixel nameplate over a clean geometric sans. The pixel face signals an engineer; the
-sans keeps everything else neutral and readable.
+**Character:** Lower Pixel sets the name and 404 message over a clean geometric sans. The sans keeps
+the links, labels, and experience rows neutral and readable.
 
 ### Hierarchy
 
-- **Display** (500, `clamp(1.75rem, 9.2vw, 3rem)`, line-height 1, tight tracking): the name only.
+- **Display** (400, `clamp(1.75rem, 9.2vw, 3rem)`, line-height 1, tight tracking): the name.
   48px from 768px up, scaling down so it never wraps on phones.
 - **Title** (500, 16px, 24px): company names in experience rows.
 - **Body** (400, 14px, 20px): roles and dates.
 - **Link** (600, 14px, 20px): the three profile links and the 404 link.
-- **Label** (500, 14px, wide tracking, uppercase): the `Experiences` section label.
+- **Label** (500, 14px, wide tracking, uppercase): the `Experience` section label.
 - **Error numeral** (600, Source Serif 4, `clamp(8rem, 42vw, 12rem)`, line-height 1, tight
   tracking): the `404` on the 404 page only. The one serif on the site.
+- **Error message** (400, Lower Pixel): the short 404 message.
 
 ### Named Rules
 
-**The Nameplate Rule.** Geist Pixel Square belongs to the name. It may appear sparingly in a future
-section heading if the site grows, but never in body text, links, labels, or dates.
+**The Nameplate Rule.** Lower Pixel belongs to the name and the 404 message. Keep it out of links,
+labels, experience rows, and dates.
 
 **The No Prose Rule.** Type sizes stop at 16px below the name because there is nothing longer than a
 role title to set. Do not add a size for paragraphs.
@@ -146,8 +154,8 @@ role title to set. Do not add a size for paragraphs.
 A single centered column, 672px maximum, with 32px side padding from 640px up and 24px below. The
 column is top-aligned with 96px of top padding and is never vertically centered.
 
-Vertical rhythm is fixed: a 48px header, 64px to the link row, 80px to the `Experiences` label,
-24px to the list, and 24px between rows. Rows are 48px tall at 390px and up.
+Vertical rhythm is fixed: a 48px header, 64px to the link row, 80px to the `Experience` label,
+24px to the list, and 24px between rows. Single-position rows are 48px; the ABS group is 152px.
 
 Each experience row is a 48 × 44 logo slot, a 16px gap, then a text block. From 640px up, the date
 sits in its own right column, centered against the company and role lines. Below 640px, the date
@@ -190,7 +198,7 @@ A bare icon button at the right of the header.
 
 ### Experience Row (signature)
 
-The core of the page: logo, company, role, date.
+Single-position rows show a logo, company, role, and date.
 
 - **Logo:** grayscale employer mark, about 28px tall, centered in a 48 × 44 slot. The ABS mark is a
   mask filled with the primary text color so it reads on both pages.
@@ -198,20 +206,24 @@ The core of the page: logo, company, role, date.
   `2026 - Present` with a spaced hyphen.
 - **States:** none. Rows are not interactive and have no hover surface.
 
+The ABS employer row groups its two positions under one company header. It uses one logo and a short
+timeline, as detailed in `specs/SPEC.md` section 5. The grouped row is 152px tall.
+
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** keep every text color to the three steps: Ink/Frost, Slate/Steel, Ash.
-- **Do** keep the 96 / 64 / 80 / 24px rhythm and 48px rows when adding anything.
+- **Do** use Ink/Frost, Slate/Steel, and Ash for page text. Use selection colors only for selected
+  text, with Ink/Frost foregrounds.
+- **Do** keep the 96 / 64 / 80 / 24px rhythm, 48px single-position rows, and the 152px ABS group.
 - **Do** check both themes at 320, 390, 768, and 1440px for every change.
 - **Do** keep logos grayscale and tune brightness per mark so they read at a similar weight.
 - **Do** keep the visible focus outline on every interactive element.
 
 ### Don't:
 
-- **Don't** add an accent color, gradient, glow, or shadow.
+- **Don't** use selection blue outside selected text. Don't add gradients, glows, or shadows.
 - **Don't** add cards, borders, separators, pills, or background tints.
-- **Don't** use Geist Pixel Square outside the name, except sparingly for a future section heading.
+- **Don't** use Lower Pixel outside the name and the 404 message.
 - **Don't** animate the name or add load, scroll, or hover motion beyond 300ms color changes.
 - **Don't** add paragraphs, taglines, or helper text to the page.

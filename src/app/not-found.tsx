@@ -33,7 +33,7 @@ export default function NotFound() {
 			>
 				404
 			</h1>
-			<p className="mt-6 mb-4 text-gray-600 dark:text-gray-400">
+			<p className="font-pixel mt-6 mb-4 text-gray-600 dark:text-gray-400">
 				I’m sorry, that page is in another castle!
 			</p>
 			<Link href="/" className={`text-sm font-semibold ${mutedLink}`}>

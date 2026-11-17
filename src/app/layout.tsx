@@ -14,10 +14,10 @@ const geistSans = localFont({
 	fallback: ["Arial", "sans-serif"],
 });
 
-const geistPixel = localFont({
-	src: "../fonts/GeistPixel-Square.woff2",
-	variable: "--font-geist-pixel-square",
-	weight: "500",
+const lowerPixel = localFont({
+	src: "../fonts/LowerPixel-Regular.woff2",
+	variable: "--font-lower-pixel",
+	weight: "400",
 	display: "swap",
 	fallback: ["ui-monospace", "monospace"],
 });
@@ -96,7 +96,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
 	return (
 		<html
 			lang="en"
-			className={`${geistSans.variable} ${geistPixel.variable}`}
+			className={`${geistSans.variable} ${lowerPixel.variable}`}
 			suppressHydrationWarning
 		>
 			<body className="antialiased">

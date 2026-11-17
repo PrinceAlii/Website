@@ -7,8 +7,8 @@ in `README.md`.
 ## Project
 
 Ali Bonagdaran's personal website at `https://www.alib.au`: one static page with a name, a theme
-toggle, three links, an `Experiences` label, and four experience rows. The ABS row holds two
-positions (experiment, see below).
+toggle, three links, an `Experience` label, and four experience rows. The ABS row holds two
+positions.
 
 The layout follows [andrewqu.com](https://www.andrewqu.com/). Match its spacing, typography, and
 themes, using the captures in `specs/reference/`. It is a design guide only, not a template to expand
@@ -29,15 +29,15 @@ Structure:
 - Exactly three links, in this order: `LinkedIn`, `GitHub`, `Contact`. `Contact` is a
   same-tab `mailto:` link and the only email entry point. The other three open in a new tab. Never
   print the email address as page text.
-- Then the `Experiences` label and four experience rows, newest first. The page ends after the last
+- Then the `Experience` label and four experience rows, newest first. The page ends after the last
   row.
 - No projects section. No footer, navigation, bio, avatar, contact block, cards, borders, separators,
   extra links, or extra sections.
 - Education, skills, achievements, and highlights stay as data only. Do not render them to make the
   site look complete. A new section is a product decision: stop and ask.
 - The 404 page includes the shared theme toggle in a 48px header, aligned to the right.
-- The name is a plain, static, selectable server-rendered `h1` in Geist Pixel Square. Nothing moves
-  except the theme switch and hover colors.
+- The name is a plain, static, selectable server-rendered `h1` in Lower Pixel. The 404 message uses
+  Lower Pixel too. Nothing moves except the theme switch and hover colors.
 - Keep both light and dark themes working.
 
 Content:
@@ -95,13 +95,18 @@ These rules cover page text, code comments, docs, errors, commit messages, PRs, 
 ## Common changes
 
 - Name, site URL, links: `src/data/profile.ts`. Metadata, the sitemap, and JSON-LD read from it.
-- Experiences: `src/data/experiences.ts`. Keep the list newest first. An employer holds a `positions`
-  list, newest first. ABS is one row with two positions, shown as a grouped timeline (one logo, one
-  company line, one dot and title per position; see `specs/SPEC.md` section 5). To go back to separate
-  rows, split the ABS entry into two experiences, each with one position. Set `shortCompany` for any company too
-  long to sit beside a phone date. A new employer needs a
-  `LogoKind`, a `CompanyLogo` branch, an SVG in `public/logos/`, and a source note in the spec.
+- Experience rows: `src/data/experiences.ts`. Keep the list newest first. Each employer has a
+  `positions` list, newest first. ABS is one row with two positions, shown as a grouped timeline. To
+  separate them, split the ABS entry into two experiences. Set `shortCompany` for any company too
+  long to sit beside a phone date. A new employer needs a `LogoKind`, a `CompanyLogo` branch, an SVG
+  in `public/logos/`, and a source note in the spec.
 - Spacing, type, or the name: edit the Tailwind classes and `specs/SPEC.md` together.
+- Section label: keep the visible heading as `Experience` in the page and `/index.md`.
+- Selection highlight: use the blue selection colors in `specs/SPEC.md` and keep both selected-text
+  foregrounds above WCAG AA contrast.
+- Lower Pixel: use the local WOFF2 font for the name and 404 message only. It is licensed for
+  personal use, so do not use it for commercial work without written permission. Do not subset or
+  alter it. WOFF2 format conversion is allowed by the license.
 - Theme: keep the `next-themes` class strategy, system default, and `theme` storage key.
 - 404 page, sitemap, metadata: `src/app/not-found.tsx`, `src/app/sitemap.ts`, `src/app/layout.tsx`.
 - Markdown for agents: `src/app/index.md/route.ts` builds it from `src/data/`, and
@@ -120,8 +125,9 @@ For any visual change, inspect 1440, 768, 390, and 320 (each 1000px tall) in lig
 fonts load, and run the checks in `specs/ACCEPTANCE.md`. At minimum confirm:
 
 - The header is 48px and the name does not wrap.
-- Vertical positions and row pitch match the spec. Rows are 48px at 390 and 1440.
-- Dates line up on one right edge.
+- Vertical positions and row pitch match the spec. The ABS group is 152px tall; other rows are 48px
+  at 390 and 1440. At 320 the Service NSW row is 68px.
+- Dates in single-position rows line up on one right edge. ABS dates stay with their roles.
 - No horizontal overflow (`document.documentElement.scrollWidth === innerWidth`).
 - The theme toggle flips the resolved theme, persists, and shows a moon or sun.
 - The name is static. The 404 page (for example `/missing`) is styled.

@@ -27,7 +27,7 @@ export function GET() {
 		"",
 		...links,
 		"",
-		"## Experiences",
+		"## Experience",
 		"",
 		...rows,
 		"",

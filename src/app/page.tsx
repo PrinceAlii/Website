@@ -8,7 +8,7 @@ export default function Home() {
 	return (
 		<>
 			<header className="mb-16 flex h-12 items-center justify-between">
-				<h1 className="font-pixel text-[clamp(1.75rem,9.2vw,3rem)] font-medium leading-none tracking-tight">
+				<h1 className="font-pixel text-[clamp(1.75rem,9.2vw,3rem)] leading-none tracking-tight">
 					{profile.name}
 				</h1>
 				<ThemeToggle />
@@ -27,12 +27,12 @@ export default function Home() {
 				))}
 			</section>
 
-			<section aria-labelledby="experiences-heading">
+			<section aria-labelledby="experience-heading">
 				<h2
-					id="experiences-heading"
+					id="experience-heading"
 					className="mb-6 text-sm font-medium uppercase tracking-wider text-gray-500"
 				>
-					Experiences
+					Experience
 				</h2>
 				<ul className="space-y-6">
 					{experiences.map((experience) => (

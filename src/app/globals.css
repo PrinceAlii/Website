@@ -12,11 +12,26 @@
 }
 
 @theme inline {
-	--font-pixel: var(--font-geist-pixel-square);
+	--font-pixel: var(--font-lower-pixel);
 	--default-font-family: var(--font-geist-sans);
 }
 
 @layer base {
+	:root {
+		--selection-foreground: #101828;
+		--selection-background: #bfdbfe;
+	}
+
+	.dark {
+		--selection-foreground: #f3f4f6;
+		--selection-background: #365f8b;
+	}
+
+	::selection {
+		color: var(--selection-foreground);
+		background-color: var(--selection-background);
+	}
+
 	body {
 		background-color: var(--color-white);
 		color: var(--color-gray-900);

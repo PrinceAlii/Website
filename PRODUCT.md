@@ -40,8 +40,8 @@ self-description. The content is Ali's own and nothing else.
 ## Capabilities and Constraints
 
 - One static page: name, theme toggle, three links (`LinkedIn`, `GitHub`, `Contact`), an
-  `Experiences` label, and five experience rows. A styled 404 page and a sitemap. Static export to
-  Cloudflare Workers.
+  `Experience` label, and four experience rows. The ABS row holds two positions. A styled 404 page
+  and a sitemap. Static export to Cloudflare Workers.
 - Light and dark themes, following the system by default, with a toggle that persists.
 - Contact is a `mailto:` link. The email address is never printed as page text.
 - The rendered page has no prose: names, labels, and dates only.
@@ -60,8 +60,8 @@ self-description. The content is Ali's own and nothing else.
 
 ## Evidence on Hand
 
-- Work history: `src/data/experiences.ts` (five roles, 2019 to present, with highlights and skills
-  kept as data).
+- Work history: `src/data/experiences.ts` (five positions across four rows, 2019 to present, with
+  highlights and skills kept as data).
 - Resume: `public/resume.pdf`. Still published at `/resume.pdf` but not linked from the page.
 - Education, skills, and achievements: `src/data/education.ts`, `src/data/skills.ts`,
   `src/data/achievements.ts`. Kept as data, not rendered.

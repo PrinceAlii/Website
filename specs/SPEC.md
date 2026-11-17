@@ -39,7 +39,7 @@ Ali Bonagdaran                          moon/sun    header, 48px
 64px
 LinkedIn  GitHub  Contact                           link row, 20px
 80px
-EXPERIENCES                                         label, 20px
+EXPERIENCE                                          label, 20px
 24px
 [logo]  Company                                    ABS header, 44px
 12px
@@ -62,9 +62,9 @@ EXPERIENCES                                         label, 20px
 | Element | x | y | width | height |
 | --- | ---: | ---: | ---: | ---: |
 | Header | 416 | 96 | 608 | 48 |
-| Name | 416 | 96 | 337.06 | 48 |
+| Name | 416 | 96 | 341.81 | 48 |
 | Link row | 416 | 208 | 608 | 20 |
-| `EXPERIENCES` | 416 | 308 | 608 | 20 |
+| `EXPERIENCE` | 416 | 308 | 608 | 20 |
 | Rows 1 to 4 | 416 | 352, 528, 600, 672 | 608 | 152, 48, 48, 48 |
 | Text block | 480 | row top + 2 | - | - |
 
@@ -77,16 +77,16 @@ Logo center, company center, and dot centers each line up exactly (see section 5
 | GitHub | 488.9 | 45.97 |
 | Contact | 550.87 | 53.8 |
 
-768px: same as desktop inside the 672px column. Name 48px, 337.06px wide.
+768px: same as desktop inside the 672px column. Name 48px, 341.81px wide.
 
 390px viewport (content `x=24`, 342px wide):
 
 | Element | x | y | width | height |
 | --- | ---: | ---: | ---: | ---: |
 | Header | 24 | 96 | 342 | 48 |
-| Name | 24 | 102.06 | 251.95 | 35.88 |
+| Name | 24 | 102.06 | 255.51 | 35.88 |
 | Link row | 24 | 208 | 342 | 20 |
-| `EXPERIENCES` | 24 | 308 | 342 | 20 |
+| `EXPERIENCE` | 24 | 308 | 342 | 20 |
 | Rows 1 to 4 | 24 | 352, 528, 600, 672 | 342 | 152, 48, 48, 48 |
 | ABS header (row 1) | 24 | 352 | 342 | 44 |
 | ABS logo (row 1) | 24 | 352 (center y 374) | 48 | 44 |
@@ -100,7 +100,7 @@ Logo center, company center, and dot centers each line up exactly (see section 5
 | Element | x | y | width | height |
 | --- | ---: | ---: | ---: | ---: |
 | Header | 24 | 96 | 272 | 48 |
-| Name | 24 | 105.28 | 206.73 | 29.44 |
+| Name | 24 | 105.28 | 209.65 | 29.44 |
 | Link row | 24 to 212.68 | 208 | - | 20 |
 | Rows 1 to 4 | 24 | 352, 528, 600, 692 | 272 | 152, 48, 68, 48 |
 | Text block | 88 | row top + 2 | 208 | - |
@@ -111,7 +111,7 @@ Logo center, company center, and dot centers each line up exactly (see section 5
 
 - Flex, `align-items: center`, `justify-content: space-between`, height 48px (`h-12`), margin-bottom
   64px (`mb-16`). It stays 48px at every width.
-- Name: Geist Pixel Square, weight 500, `line-height: 1`, `tracking-tight` (-0.025em, -1.2px at
+- Name: Lower Pixel Regular, weight 400, `line-height: 1`, `tracking-tight` (-0.025em, -1.2px at
   48px), font size `clamp(1.75rem, 9.2vw, 3rem)`. That gives 48px at 768 and up, 35.88px at 390, and
   29.44px at 320. It never wraps and never causes horizontal scroll. No `aria-label`, no extra layers,
   no hover state, default cursor.
@@ -125,7 +125,7 @@ Logo center, company center, and dot centers each line up exactly (see section 5
   three links fit on one line at every supported width.
 - Links: Geist Sans 14px/20px, weight 600, secondary text color, primary on hover. No separators,
   icons, arrows, underlines, pills, or button chrome.
-- `Experiences` label: the only `h2`, rendered uppercase by CSS. Geist Sans 14px/20px, weight 500,
+- `Experience` label: the only `h2`, rendered uppercase by CSS. Geist Sans 14px/20px, weight 500,
   `tracking-wider` (0.7px), muted color in both themes, margin-bottom 24px. The list uses
   `aria-labelledby` to point at it.
 
@@ -203,9 +203,12 @@ owners, identify employers only, and do not imply endorsement.
 | Primary text, focus outline, link and toggle hover | `#101828` | `#f3f4f6` |
 | Secondary text (roles, links, toggle) | `#4a5565` | `#99a1af` |
 | Muted text (dates, label) | `#6a7282` | `#6a7282` |
+| Text selection background | `#bfdbfe` | `#365f8b` |
+| Text selection foreground | `#101828` | `#f3f4f6` |
 
 - The gray palette is overridden in the Tailwind `@theme` in `src/app/globals.css`. No gradients,
-  glows, shadows, or accent colors.
+  glows, or shadows. Blue is reserved for text selection.
+- Selected-text contrast is 12.49:1 in light mode and 6.03:1 in dark mode.
 - `next-themes` `ThemeProvider` in `src/app/layout.tsx`: `attribute="class"` (`.dark` on `<html>`),
   `storageKey="theme"`, and the library's system default. The OS preference applies until the visitor picks a theme. The toggle switches
   to the opposite of the resolved theme, reading the `dark` class before hydration. Do not use
@@ -253,8 +256,8 @@ Data that is not rendered:
 - `src/data/skills.ts`: operating systems, languages, cloud and DevOps, containers, tooling, home lab.
 - `src/data/achievements.ts`: 2nd in NSW IPT (2022 HSC) and an in-progress AWS certification.
 
-The complete visible text of the main page is the name, the three link labels, `Experiences`, and the
-five company labels, roles, and date ranges.
+The complete visible text of the main page is the name, the three link labels, `Experience`, and the
+four company labels, five role titles, and date ranges.
 
 ## 9. Metadata and assets
 
@@ -273,14 +276,18 @@ five company labels, roles, and date ranges.
   from the page. Keep it current.
 - No metadata may mention the reference site or its author.
 
-Fonts are the Geist family from [vercel/geist-font](https://github.com/vercel/geist-font), vendored
-unmodified in `src/fonts/` under the SIL Open Font License 1.1 (`OFL.txt`, `AUTHORS.txt`) and loaded
-with `next/font/local`. Filenames are local aliases.
+Geist is from [vercel/geist-font](https://github.com/vercel/geist-font), vendored unmodified in
+`src/fonts/` under the SIL Open Font License 1.1 (`OFL.txt`, `AUTHORS.txt`). Lower Pixel Regular is
+by IbraCreative, from [1001Fonts](https://www.1001fonts.com/lower-pixel-font.html), under the
+[1001Fonts Free For Personal Use License](https://www.1001fonts.com/licenses/ffp.html). That license
+allows font format conversion and web embedding for personal use. The full 210-glyph font is
+converted from OTF to WOFF2 without subsetting or other changes. It is for this personal,
+noncommercial site only. All fonts use `next/font/local`, so clients download them from the site.
 
 | File | Variable | Use |
 | --- | --- | --- |
-| `Geist-Variable.woff2` | `--font-geist-sans` | All text except the name |
-| `GeistPixel-Square.woff2` | `--font-geist-pixel-square` | The name only, weight 500 |
+| `Geist-Variable.woff2` | `--font-geist-sans` | All text except the name and 404 message |
+| `LowerPixel-Regular.woff2` | `--font-lower-pixel` | The name and 404 message, weight 400 |
 | `Serif404-Semibold.woff2` | none (class on the `h1`) | The 404 numeral only |
 
 `Serif404-Semibold.woff2` is Source Serif 4 Semibold (opsz 60) from Google Fonts, subset to the
@@ -294,7 +301,8 @@ characters, download a new subset with `&text=` set to every character needed.
 - One `h1`, one `h2`, one `h3` per experience. The experience list is a real `ul`.
 - Main page tab order: theme toggle, `LinkedIn`, `GitHub`, `Contact`. On the 404 page, the toggle
   comes before `Back home`.
-- Text contrast meets WCAG AA at the grays above.
+- Text contrast meets WCAG AA at the grays above. Selected text uses the background and foreground
+  colors in section 7.
 - The page works without JavaScript. Only the theme toggle needs it.
 
 ## 11. 404 page
@@ -305,7 +313,8 @@ main page, in both themes. From top to bottom:
 - A 48px header with the shared theme toggle aligned right, followed by 64px of space.
 - `404` as the `h1`, in `Serif404-Semibold` (section 9), `clamp(8rem, 42vw, 12rem)` (192px on
   desktop, about 134px at 320), `line-height: 1`, tight tracking, primary text color.
-- 24px below: `I’m sorry, that page is in another castle!` in Geist 16px/24px, secondary color.
+- `I’m sorry, that page is in another castle!` sits 24px below in Lower Pixel 16px/24px, secondary
+  color. It stays on one line from 390px up and wraps to two lines at 320px.
 - 16px below: the `Back home` link to `/`, styled like the profile links.
 
 No link row, images, or animation. The toggle uses the same theme setting and behavior as the main

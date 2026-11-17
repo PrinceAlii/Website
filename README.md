@@ -58,6 +58,9 @@ Pushing to `main` deploys. There is no local deploy step.
 - Design inspired by [andrewqu.com](https://www.andrewqu.com/). Reference captures in
   `specs/reference/` are for design review only and are not deployed.
 - Geist fonts by Vercel, under the SIL Open Font License 1.1 (`src/fonts/OFL.txt`).
+- Lower Pixel Regular by IbraCreative, from
+  [1001Fonts](https://www.1001fonts.com/lower-pixel-font.html), under the 1001Fonts Free For
+  Personal Use License.
 - The 404 numeral uses a subset of Source Serif 4 by Adobe, under the SIL Open Font License 1.1
   (`src/fonts/OFL-SourceSerif.md`).
 - Employer logos are trademarks of their owners, used only to identify Ali's work history. Sources

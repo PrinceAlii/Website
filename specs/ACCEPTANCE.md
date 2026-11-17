@@ -5,7 +5,7 @@ numbers below point there.
 
 ## Structure and content
 
-- [ ] Exactly one `h1` (`Ali Bonagdaran`), one `h2` (`Experiences`), and four `h3` elements.
+- [ ] Exactly one `h1` (`Ali Bonagdaran`), one `h2` (`Experience`), and four `h3` elements.
 - [ ] Exactly three links in the link row, in order, with the destinations and tab behavior in
       section 8.
 - [ ] No `nav`, `footer`, projects, about, skills, education, achievements, or contact section. Nothing
@@ -46,6 +46,8 @@ At 1440, 768, 390, and 320 wide, 1000 tall:
 - [ ] The toggle shows a moon in light and a sun in dark, and switches to the opposite resolved theme.
 - [ ] The choice persists across reloads under the `theme` key. With nothing saved, the OS preference
       applies. No flash on load.
+- [ ] Selected text uses the blue background and matching foreground from section 7 in both themes.
+- [ ] The selected-text contrast is at least 4.5:1 in both themes.
 - [ ] Only the links and the toggle change color on hover. The name is static, selectable text.
 - [ ] Reduced motion leaves the page static and fully usable.
 - [ ] No hydration mismatch warning in the console.
@@ -64,14 +66,14 @@ At 1440, 768, 390, and 320 wide, 1000 tall:
 
 - [ ] Main page tab order is toggle, `LinkedIn`, `GitHub`, `Contact`. On the 404 page, the toggle
       comes before `Back home`. Every focus outline shows.
-- [ ] The name has no `aria-label`. The list is labelled by the `Experiences` heading.
+- [ ] The name has no `aria-label`. The list is labelled by the `Experience` heading.
 - [ ] Logos have empty alt text, and each company name is exposed once.
 - [ ] Contrast meets WCAG AA. The page is readable and navigable with JavaScript off.
 
 ## 404 page (section 11)
 
-- [ ] An unknown URL shows the styled 404 page with a large Source Serif `404`, the castle message,
-      and a link to `/`.
+- [ ] An unknown URL shows a Source Serif `404`, a Lower Pixel castle message, and `Back home`.
+- [ ] Lower Pixel is served as a local WOFF2 asset. The page makes no third-party font request.
 - [ ] It matches the main page in both themes and has no horizontal scroll at the four viewports.
 
 ## Build and deployment

@@ -33,11 +33,11 @@ At 1440, 768, 390, and 320 wide, 1000 tall:
 - [ ] Company names: the ABS group shows `ABS` below 360px and the full name from 360px up. No name
       truncates or wraps (each `h3` is one 24px line with `scrollWidth` equal to `clientWidth`).
 - [ ] Hovering a grayscale logo shows its full color. The logo box background does not change. The
-      ABS mark does not change on hover.
+      ABS mark turns navy (light) or light blue (dark) on hover, and fades back when the pointer leaves.
 - [ ] At 390 the ABS row is 152px and the other rows are 48px. At 320 the ABS row is 152px, Service NSW
       is 68px, and the other rows are 48px. No text is clipped.
 - [ ] ABS geometry matches section 5 at 320, 390, 768, and 1440 in both themes: header center equals
-      logo center, dot centers equal the logo center x, each dot center equals its role line center,
+      logo center, dot centers equal the logo center x, each dot center equals its position block center (top + 20px),
       and the line center equals the dot center x (all 0px in `getBoundingClientRect`).
 
 ## Theme and motion (section 7)

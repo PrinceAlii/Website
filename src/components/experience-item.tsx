@@ -15,7 +15,7 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
 	if (experience.positions.length > 1) {
 		// Geometry in px. The header is 44px, and the logo (36px artwork) and the company line (24px)
 		// share its center at y = 22. Dots sit on the logo's center at x = 24. Each position is 40px
-		// (role 20 + date 20) with 16px between positions, so a dot's center is 10px below its top.
+		// (role 20 + date 20) with 16px between positions, so a dot's center sits 20px below its top, the middle of the block.
 		const last = experience.positions.length - 1;
 		return (
 			<li>
@@ -39,12 +39,12 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
 							{index < last && (
 								<span
 									aria-hidden="true"
-									className="absolute top-[10px] left-[23px] h-[56px] w-0.5 bg-gray-300 dark:bg-gray-700"
+									className="absolute top-[20px] left-[23px] h-[56px] w-0.5 bg-gray-300 dark:bg-gray-700"
 								/>
 							)}
 							<span
 								aria-hidden="true"
-								className="absolute top-[6px] left-5 size-2 rounded-full bg-gray-400 dark:bg-gray-500"
+								className="absolute top-[16px] left-5 size-2 rounded-full bg-gray-400 dark:bg-gray-500"
 							/>
 							<p className="h-5 text-sm leading-5 font-medium text-gray-900 dark:text-gray-100">
 								{position.role}

@@ -170,7 +170,7 @@ earlier experiments:
   positions are 16px apart. Position text starts at x = 64 (48px logo slot + 16px gap), the same as the
   company name.
 - One dot per position: 8px circle, centered on the logo's center line (x = 24 in the logo slot), with
-  its center 10px below the top of its position. The dot sits on the role line.
+  its center 20px below the top of its position, the middle of the title and date together.
 - A 2px line joins the dots, centered on the same x, from the first dot's center to the last dot's
   center. The last position has no line below it.
 - Role: 14px/20px, weight 500, primary color. Date: 14px/20px, weight 400, muted color. No location,
@@ -189,8 +189,8 @@ earlier experiments:
 
 Hover: each grayscale logo shows its full color while the pointer is over it, using
 `hover:grayscale-0 hover:brightness-100` inside `(hover: hover)`, with a 300ms transition. Only the
-filter changes. The logo box and its background stay the same. The ABS mark is one color, so it has no
-hover color change.
+filter changes. The logo box and its background stay the same. The ABS mark rests gray and turns navy
+(light) or light blue (dark) on hover, with the same 300ms transition.
 
 Logos use `alt=""` because the company name sits next to them. They remain trademarks of their
 owners, identify employers only, and do not imply endorsement.

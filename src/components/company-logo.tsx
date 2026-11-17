@@ -2,7 +2,8 @@ import Image from "next/image";
 
 import type { LogoKind } from "@/data/experiences";
 
-// Grayscale image logos. Brightness is tuned per mark so each reads at a similar weight.
+// Grayscale image logos. Brightness is tuned per mark so each reads at a similar weight. On hover
+// the logo shows its full color. Only filters change, so the box and its background stay the same.
 const imageLogos = {
 	commbank: { height: 32, className: "h-7 w-7 brightness-90 dark:brightness-100" },
 	"service-nsw": { height: 32, className: "h-7 w-7" },
@@ -12,7 +13,8 @@ const imageLogos = {
 export function CompanyLogo({ kind }: { kind: LogoKind }) {
 	if (kind === "abs") {
 		// The artwork has a transparent background. Used as a mask, it takes the text color of the
-		// current theme, so it stays readable on both the white and the black page.
+		// current theme, so it stays readable on both the white and the black page. The mark has one
+		// color only, so it has no full-color hover state.
 		const mask = "url(/logos/abs.svg) center / contain no-repeat";
 		return (
 			<span
@@ -30,7 +32,7 @@ export function CompanyLogo({ kind }: { kind: LogoKind }) {
 			alt=""
 			width={32}
 			height={height}
-			className={`${className} object-contain grayscale`}
+			className={`${className} object-contain grayscale transition duration-300 hover:grayscale-0 hover:brightness-100`}
 		/>
 	);
 }

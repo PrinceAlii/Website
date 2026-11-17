@@ -5,11 +5,11 @@ numbers below point there.
 
 ## Structure and content
 
-- [ ] Exactly one `h1` (`Ali Bonagdaran`), one `h2` (`Experiences`), and five `h3` elements.
+- [ ] Exactly one `h1` (`Ali Bonagdaran`), one `h2` (`Experiences`), and four `h3` elements.
 - [ ] Exactly three links in the link row, in order, with the destinations and tab behavior in
       section 8.
 - [ ] No `nav`, `footer`, projects, about, skills, education, achievements, or contact section. Nothing
-      follows the fifth row.
+      follows the fourth row.
 - [ ] The only images are the four employer logos.
 - [ ] Visible text is exactly the list at the end of section 8. The email address is not visible.
 - [ ] Dates read `2026 - Present`, `2025 - 2026`, `2024 - 2025`, `2023 - 2024`, `2019 - 2023`.
@@ -30,7 +30,15 @@ At 1440, 768, 390, and 320 wide, 1000 tall:
 - [ ] 768 and 1440 show full company names and dates in the right column. No phone label is visible.
 - [ ] 390 and 320 show the phone labels, with each date right-aligned on the company line and never
       overlapping it. Roles use the full text width.
-- [ ] At 390 every row is 48px. At 320 only Service NSW is 68px. No text is clipped.
+- [ ] Company names: the ABS group shows `ABS` below 360px and the full name from 360px up. No name
+      truncates or wraps (each `h3` is one 24px line with `scrollWidth` equal to `clientWidth`).
+- [ ] Hovering a grayscale logo shows its full color. The logo box background does not change. The
+      ABS mark does not change on hover.
+- [ ] At 390 the ABS row is 152px and the other rows are 48px. At 320 the ABS row is 152px, Service NSW
+      is 68px, and the other rows are 48px. No text is clipped.
+- [ ] ABS geometry matches section 5 at 320, 390, 768, and 1440 in both themes: header center equals
+      logo center, dot centers equal the logo center x, each dot center equals its role line center,
+      and the line center equals the dot center x (all 0px in `getBoundingClientRect`).
 
 ## Theme and motion (section 7)
 

@@ -7,7 +7,8 @@ in `README.md`.
 ## Project
 
 Ali Bonagdaran's personal website at `https://www.alib.au`: one static page with a name, a theme
-toggle, three links, an `Experiences` label, and five experience rows.
+toggle, three links, an `Experiences` label, and four experience rows. The ABS row holds two
+positions (experiment, see below).
 
 The layout follows [andrewqu.com](https://www.andrewqu.com/). Match its spacing, typography, and
 themes, using the captures in `specs/reference/`. It is a design guide only, not a template to expand
@@ -28,7 +29,7 @@ Structure:
 - Exactly three links, in this order: `LinkedIn`, `GitHub`, `Contact`. `Contact` is a
   same-tab `mailto:` link and the only email entry point. The other three open in a new tab. Never
   print the email address as page text.
-- Then the `Experiences` label and five experience rows, newest first. The page ends after the last
+- Then the `Experiences` label and four experience rows, newest first. The page ends after the last
   row.
 - No projects section. No footer, navigation, bio, avatar, contact block, cards, borders, separators,
   extra links, or extra sections.
@@ -94,8 +95,11 @@ These rules cover page text, code comments, docs, errors, commit messages, PRs, 
 ## Common changes
 
 - Name, site URL, links: `src/data/profile.ts`. Metadata, the sitemap, and JSON-LD read from it.
-- Experiences: `src/data/experiences.ts`. Keep the list newest first. Do not merge the two ABS roles.
-  Set `shortCompany` for any company too long to sit beside a phone date. A new employer needs a
+- Experiences: `src/data/experiences.ts`. Keep the list newest first. An employer holds a `positions`
+  list, newest first. ABS is one row with two positions, shown as a grouped timeline (one logo, one
+  company line, one dot and title per position; see `specs/SPEC.md` section 5). To go back to separate
+  rows, split the ABS entry into two experiences, each with one position. Set `shortCompany` for any company too
+  long to sit beside a phone date. A new employer needs a
   `LogoKind`, a `CompanyLogo` branch, an SVG in `public/logos/`, and a source note in the spec.
 - Spacing, type, or the name: edit the Tailwind classes and `specs/SPEC.md` together.
 - Theme: keep the `next-themes` class strategy, system default, and `theme` storage key.

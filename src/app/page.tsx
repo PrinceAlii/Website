@@ -37,7 +37,7 @@ export default function Home() {
 				<ul className="space-y-6">
 					{experiences.map((experience) => (
 						<ExperienceItem
-							key={`${experience.company}-${experience.startDate}`}
+							key={`${experience.company}-${experience.positions[0]?.startDate}`}
 							experience={experience}
 						/>
 					))}

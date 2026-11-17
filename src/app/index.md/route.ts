@@ -9,8 +9,10 @@ export function GET() {
 	const links = profile.links.map(
 		(link) => `- [${link.label}](${new URL(link.href, profile.siteUrl).href})`,
 	);
-	const rows = experiences.map(
-		(experience) => `- **${experience.company}**: ${experience.role} (${formatPeriod(experience)})`,
+	const rows = experiences.flatMap((experience) =>
+		experience.positions.map(
+			(position) => `- **${experience.company}**: ${position.role} (${formatPeriod(position)})`,
+		),
 	);
 	const markdown = [
 		"---",

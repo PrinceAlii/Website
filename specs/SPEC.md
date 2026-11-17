@@ -28,7 +28,8 @@ Deliberate differences from the reference:
   The reference uses a fixed 48px name.
 - The reference always shows a moon icon. This site shows a sun in dark mode.
 - The reference name flip animation is not used. The name is static.
-- Ali has five experiences instead of four. This must not change the layout.
+- Ali has four experience rows. The ABS row holds two positions (section 5). This must not change the
+  layout.
 
 ## 2. Layout
 
@@ -40,10 +41,15 @@ LinkedIn  GitHub  Contact                           link row, 20px
 80px
 EXPERIENCES                                         label, 20px
 24px
-[logo]  Company                   2026 - Present    row, 48px
-        Role
+[logo]  Company                                    ABS header, 44px
+12px
+        ●  Role                                   position, 40px
+           2026 - Present
+16px
+        ●  Role                                   position, 40px
+           2025 - 2026
 24px
-... four more rows, then the page ends
+... three more rows, then the page ends
 ```
 
 - Centered `main`, `max-width: 672px` (`max-w-2xl`), padding `96px 32px` at `sm` (640px) and up,
@@ -59,8 +65,11 @@ EXPERIENCES                                         label, 20px
 | Name | 416 | 96 | 337.06 | 48 |
 | Link row | 416 | 208 | 608 | 20 |
 | `EXPERIENCES` | 416 | 308 | 608 | 20 |
-| Rows 1 to 5 | 416 | 352, 424, 496, 568, 640 | 608 | 48 |
-| Text block | 480 | row top | - | - |
+| Rows 1 to 4 | 416 | 352, 528, 600, 672 | 608 | 152, 48, 48, 48 |
+| Text block | 480 | row top + 2 | - | - |
+
+ABS row (row 1) is 152px: a 44px header, 12px, then two 40px positions with 16px between them.
+Logo center, company center, and dot centers each line up exactly (see section 5).
 
 | Link | x | width |
 | --- | ---: | ---: |
@@ -78,10 +87,13 @@ EXPERIENCES                                         label, 20px
 | Name | 24 | 102.06 | 251.95 | 35.88 |
 | Link row | 24 | 208 | 342 | 20 |
 | `EXPERIENCES` | 24 | 308 | 342 | 20 |
-| Rows 1 to 5 | 24 | 352, 424, 496, 568, 640 | 342 | 48 |
-| Logo slot | 24 | row top + 2 | 48 | 44 |
-| Text block | 88 | row top | 278 | - |
-| Date (row 1) | 262.05 | 354 | 103.95 | 20 |
+| Rows 1 to 4 | 24 | 352, 528, 600, 672 | 342 | 152, 48, 48, 48 |
+| ABS header (row 1) | 24 | 352 | 342 | 44 |
+| ABS logo (row 1) | 24 | 352 (center y 374) | 48 | 44 |
+| ABS dots (row 1) | center x 48 | 418 and 474 | 8 | 8 each |
+| Logo slot (rows 2 to 4) | 24 | row top + 2 | 48 | 44 |
+| Text block (rows 2 to 4) | 88 | row top + 2 | 278 | - |
+| ABS roles (row 1) | 88 | 408 and 464 | 278 | 20 each |
 
 320px viewport (content `x=24`, 272px wide):
 
@@ -90,10 +102,8 @@ EXPERIENCES                                         label, 20px
 | Header | 24 | 96 | 272 | 48 |
 | Name | 24 | 105.28 | 206.73 | 29.44 |
 | Link row | 24 to 212.68 | 208 | - | 20 |
-| Rows 1 to 3 | 24 | 352, 424, 496 | 272 | 48 |
-| Row 4 (Service NSW, role wraps) | 24 | 568 | 272 | 68 |
-| Row 5 | 24 | 660 | 272 | 48 |
-| Text block | 88 | row top | 208 | - |
+| Rows 1 to 4 | 24 | 352, 528, 600, 692 | 272 | 152, 48, 68, 48 |
+| Text block | 88 | row top + 2 | 208 | - |
 
 `document.documentElement.scrollWidth` equals the viewport width at 320, 390, 768, and 1440.
 
@@ -136,11 +146,37 @@ Below `sm`:
 
 - Company and date share one line, date at the right with at least 8px gap, vertically centered on
   the company line (2px below its top). The role spans the full text width below.
-- Company labels are `ABS`, `ABS`, `CommBank`, `Service NSW`, `McDonald's` (`shortCompany`, falling
+- Company labels are `ABS`, `CommBank`, `Service NSW`, `McDonald's` (`shortCompany`, falling
   back to the full name). CSS shows only one of the two labels at a time, so screen readers get one
   name.
+- Full names show whenever they fit on one line. They never truncate or wrap. Where a full name does
+  not fit, the short label is used:
+  - Single-position rows: the full name shows from `sm` (640px) up. Below `sm` the company shares its
+    line with the date. `Commonwealth Bank of Australia` (about 250px at 16px) does not fit beside
+    a date on a phone, so it shows `CommBank` there. `Service NSW` and `McDonald's` are the same full
+    and short names.
+  - The ABS group: the full name shows from 360px up. `Australian Bureau of Statistics` is about
+    228px at 16px, and the text column is 112px narrower than the viewport, so it fits from about
+    340px. 360px is the threshold used so there is a margin. Below 360px it shows `ABS`.
 - Rows are 48px at 390. At 320 only the Service NSW row grows to 68px. Never force a fixed row height
   that clips a wrapped role.
+
+Employers with several positions (ABS) use a grouped timeline. This is the chosen layout, replacing the
+earlier experiments:
+
+- A header row, 44px tall, flex with `align-items: center`: the logo slot (48 × 44) and the company
+  `h3` (24px line). The logo and the company line share one center line (y = 22 from the header top).
+- 12px below the header, then a timeline `ol`. Each position is 40px (role 20px, date 20px) and
+  positions are 16px apart. Position text starts at x = 64 (48px logo slot + 16px gap), the same as the
+  company name.
+- One dot per position: 8px circle, centered on the logo's center line (x = 24 in the logo slot), with
+  its center 10px below the top of its position. The dot sits on the role line.
+- A 2px line joins the dots, centered on the same x, from the first dot's center to the last dot's
+  center. The last position has no line below it.
+- Role: 14px/20px, weight 500, primary color. Date: 14px/20px, weight 400, muted color. No location,
+  duration, or skills.
+- Below 360px the header shows the `shortCompany` label (`ABS`). From 360px up it shows the full name.
+- The group is 152px tall. The next row starts 24px below it.
 
 ## 6. Logos
 
@@ -150,6 +186,11 @@ Below `sm`:
 | `public/logos/commbank.svg` | https://www.commbank.com.au/content/dam/commbank/commBank-logo.svg, unchanged | Grayscale, about 28px tall, `brightness-90` in light mode so both tones show. |
 | `public/logos/service-nsw.svg` | https://www.service.nsw.gov.au/themes/snsw_theme/images/servicensw-logo.svg, circular symbol extracted without the wordmark | Grayscale, about 28px tall. |
 | `public/logos/mcdonalds.svg` | https://commons.wikimedia.org/wiki/File:McDonald%27s_Golden_Arches.svg, unchanged | Grayscale, 28px tall, natural aspect ratio, `brightness-75` in light mode. |
+
+Hover: each grayscale logo shows its full color while the pointer is over it, using
+`hover:grayscale-0 hover:brightness-100` inside `(hover: hover)`, with a 300ms transition. Only the
+filter changes. The logo box and its background stay the same. The ABS mark is one color, so it has no
+hover color change.
 
 Logos use `alt=""` because the company name sits next to them. They remain trademarks of their
 owners, identify employers only, and do not imply endorsement.
@@ -198,13 +239,12 @@ New-tab links use `target="_blank"` and `rel="noopener noreferrer"`. `Contact` h
 
 | # | Company | Phone label | Role | Dates | Display | Logo |
 | --- | --- | --- | --- | --- | --- | --- |
-| 1 | Australian Bureau of Statistics | ABS | Graduate DevOps Engineer | 2026-02 to Present | 2026 - Present | `abs` |
-| 2 | Australian Bureau of Statistics | ABS | Cadet, DevOps | 2025-03 to 2026-02 | 2025 - 2026 | `abs` |
-| 3 | Commonwealth Bank of Australia | CommBank | Business Banking Associate | 2024-11 to 2025-06 | 2024 - 2025 | `commbank` |
-| 4 | Service NSW | Service NSW | Customer & Digital Service Representative | 2023-03 to 2024-11 | 2023 - 2024 | `service-nsw` |
-| 5 | McDonald's | McDonald's | Crew Member | 2019-08 to 2023-03 | 2019 - 2023 | `mcdonalds` |
+| 1 | Australian Bureau of Statistics | ABS | Graduate DevOps Engineer; Cadet, DevOps | 2026-02 to Present; 2025-03 to 2026-02 | 2026 - Present; 2025 - 2026 | `abs` |
+| 2 | Commonwealth Bank of Australia | CommBank | Business Banking Associate | 2024-11 to 2025-06 | 2024 - 2025 | `commbank` |
+| 3 | Service NSW | Service NSW | Customer & Digital Service Representative | 2023-03 to 2024-11 | 2023 - 2024 | `service-nsw` |
+| 4 | McDonald's | McDonald's | Crew Member | 2019-08 to 2023-03 | 2019 - 2023 | `mcdonalds` |
 
-Each row shows company, role, and date only. Locations, highlights, and skills stay in the data.
+Each row shows company, role, and date only. The ABS row is the grouped timeline in section 5. Locations, highlights, and skills stay in the data.
 
 Data that is not rendered:
 

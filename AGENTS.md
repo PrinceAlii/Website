@@ -125,9 +125,11 @@ For any visual change, inspect 1440, 768, 390, and 320 (each 1000px tall) in lig
 fonts load, and run the checks in `specs/ACCEPTANCE.md`. At minimum confirm:
 
 - The header is 48px and the name does not wrap.
-- Vertical positions and row pitch match the spec. The ABS group is 152px tall; other rows are 48px
-  at 390 and 1440. At 320 the Service NSW row is 68px.
-- Dates in single-position rows line up on one right edge. ABS dates stay with their roles.
+- Vertical positions and row pitch match the spec. The ABS group is 112px at 768 and 1440, 132px at
+  390, and 152px at 320. Other rows are 48px at 768, 390, and 1440. At 320 the Service NSW row is
+  68px.
+- Dates in all rows line up on one right edge. ABS dates share a row with their roles, and each dot
+  centers on its role text block.
 - No horizontal overflow (`document.documentElement.scrollWidth === innerWidth`).
 - The theme toggle flips the resolved theme, persists, and shows a moon or sun.
 - The name is static. The 404 page (for example `/missing`) is styled.

@@ -155,12 +155,14 @@ A single centered column, 672px maximum, with 32px side padding from 640px up an
 column is top-aligned with 96px of top padding and is never vertically centered.
 
 Vertical rhythm is fixed: a 48px header, 64px to the link row, 80px to the `Experience` label,
-24px to the list, and 24px between rows. Single-position rows are 48px; the ABS group is 152px.
+24px to the list, and 24px between rows. Single-position rows are 48px. The ABS group is 112px at
+768px and 1440px, 132px at 390px, and 152px at 320px because its first role wraps.
 
-Each experience row is a 48 × 44 logo slot, a 16px gap, then a text block. From 640px up, the date
-sits in its own right column, centered against the company and role lines. Below 640px, the date
-shares the company line and the role spans the full width beneath. Phones show short company labels
-(`ABS`, `CommBank`) so the date never collides with the name.
+Each experience row is a 48 × 44 logo slot, a 16px gap, then a text block. In single-position rows,
+the date sits in its own right column from 640px up, centered against the company and role lines.
+Below 640px, it shares the company line and the role spans the full width beneath. Phones show short
+company labels (`ABS`, `CommBank`) so the date never collides with the name. The grouped ABS row
+keeps each date on its role line at every width.
 
 **The No Overflow Rule.** The page never scrolls horizontally, from 320px to 1440px.
 
@@ -207,7 +209,9 @@ Single-position rows show a logo, company, role, and date.
 - **States:** none. Rows are not interactive and have no hover surface.
 
 The ABS employer row groups its two positions under one company header. It uses one logo and a short
-timeline, as detailed in `specs/SPEC.md` section 5. The grouped row is 152px tall.
+timeline, as detailed in `specs/SPEC.md` section 5. Dates share a line with each role and align to the
+same right edge as the dates in the other rows. Each dot centers on its role text. The group grows
+when a role wraps on a narrow viewport.
 
 ## Do's and Don'ts
 
@@ -215,7 +219,8 @@ timeline, as detailed in `specs/SPEC.md` section 5. The grouped row is 152px tal
 
 - **Do** use Ink/Frost, Slate/Steel, and Ash for page text. Use selection colors only for selected
   text, with Ink/Frost foregrounds.
-- **Do** keep the 96 / 64 / 80 / 24px rhythm, 48px single-position rows, and the 152px ABS group.
+- **Do** keep the 96 / 64 / 80 / 24px rhythm and 48px single-position rows. Let the ABS group grow
+  with wrapped role lines while keeping dates and timeline dots centered with their roles.
 - **Do** check both themes at 320, 390, 768, and 1440px for every change.
 - **Do** keep logos grayscale and tune brightness per mark so they read at a similar weight.
 - **Do** keep the visible focus outline on every interactive element.

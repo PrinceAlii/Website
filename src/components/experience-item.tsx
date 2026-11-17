@@ -13,9 +13,8 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
 	);
 
 	if (experience.positions.length > 1) {
-		// Geometry in px. The header is 44px, and the logo (36px artwork) and the company line (24px)
-		// share its center at y = 22. Dots sit on the logo's center at x = 24. Each position is 40px
-		// (role 20 + date 20) with 16px between positions, so a dot's center sits 20px below its top, the middle of the block.
+		// The 48px timeline gutter and 16px gap keep role text on the company-name edge. The dot
+		// centers on the role line box, while its connector meets the next dot through the 16px gap.
 		const last = experience.positions.length - 1;
 		return (
 			<li>
@@ -33,23 +32,36 @@ export function ExperienceItem({ experience }: { experience: Experience }) {
 						</span>
 					</h3>
 				</div>
-				<ol className="mt-3">
+				<ol className="mt-3 flex flex-col gap-4">
 					{experience.positions.map((position, index) => (
-						<li key={position.startDate} className="relative pb-4 pl-16 last:pb-0">
+						<li
+							key={position.startDate}
+							className="relative grid grid-cols-[48px_minmax(0,1fr)] items-center gap-x-4"
+						>
 							{index < last && (
 								<span
 									aria-hidden="true"
-									className="absolute top-[20px] left-[23px] h-[56px] w-0.5 bg-gray-300 dark:bg-gray-700"
+									className="absolute top-1/2 bottom-[-8px] left-[23px] w-0.5 bg-gray-300 dark:bg-gray-700"
+								/>
+							)}
+							{index > 0 && (
+								<span
+									aria-hidden="true"
+									className="absolute top-[-8px] bottom-1/2 left-[23px] w-0.5 bg-gray-300 dark:bg-gray-700"
 								/>
 							)}
 							<span
 								aria-hidden="true"
-								className="absolute top-[16px] left-5 size-2 rounded-full bg-gray-400 dark:bg-gray-500"
+								className="absolute top-1/2 left-5 size-2 -translate-y-1/2 rounded-full bg-gray-400 dark:bg-gray-500"
 							/>
-							<p className="h-5 text-sm leading-5 font-medium text-gray-900 dark:text-gray-100">
-								{position.role}
-							</p>
-							<p className="h-5 text-sm leading-5 text-gray-500">{formatPeriod(position)}</p>
+							<div className="col-start-2 flex min-w-0 items-center justify-between gap-2">
+								<p className="min-w-0 flex-1 text-sm leading-5 font-medium text-gray-900 dark:text-gray-100">
+									{position.role}
+								</p>
+								<p className="shrink-0 whitespace-nowrap text-sm leading-5 text-gray-500">
+									{formatPeriod(position)}
+								</p>
+							</div>
 						</li>
 					))}
 				</ol>

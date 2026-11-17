@@ -34,11 +34,13 @@ At 1440, 768, 390, and 320 wide, 1000 tall:
       truncates or wraps (each `h3` is one 24px line with `scrollWidth` equal to `clientWidth`).
 - [ ] Hovering a grayscale logo shows its full color. The logo box background does not change. The
       ABS mark turns navy (light) or light blue (dark) on hover, and fades back when the pointer leaves.
-- [ ] At 390 the ABS row is 152px and the other rows are 48px. At 320 the ABS row is 152px, Service NSW
-      is 68px, and the other rows are 48px. No text is clipped.
-- [ ] ABS geometry matches section 5 at 320, 390, 768, and 1440 in both themes: header center equals
-      logo center, dot centers equal the logo center x, each dot center equals its position block center (top + 20px),
-      and the line center equals the dot center x (all 0px in `getBoundingClientRect`).
+- [ ] At 1440 and 768 the ABS row is 112px. At 390 it is 132px, and the other rows are 48px. At 320
+      the ABS row is 152px, Service NSW is 68px, and the other rows are 48px. No text is clipped.
+- [ ] ABS geometry matches section 5 at 320, 390, 768, and 1440 in both themes: the header center
+      equals the logo center; dot centers equal the logo center x and the role text block's vertical
+      center; each date shares its role's vertical center and ends at the same right edge as the other
+      dates; connector segments meet through the 16px gap and share the dot center x (0px difference
+      in `getBoundingClientRect`).
 
 ## Theme and motion (section 7)
 

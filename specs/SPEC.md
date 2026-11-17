@@ -43,11 +43,9 @@ EXPERIENCE                                          label, 20px
 24px
 [logo]  Company                                    ABS header, 44px
 12px
-        ●  Role                                   position, 40px
-           2026 - Present
+        ●  Role                         2026 - Present  position, 20px
 16px
-        ●  Role                                   position, 40px
-           2025 - 2026
+        ●  Role                            2025 - 2026  position, 20px
 24px
 ... three more rows, then the page ends
 ```
@@ -65,11 +63,15 @@ EXPERIENCE                                          label, 20px
 | Name | 416 | 96 | 341.81 | 48 |
 | Link row | 416 | 208 | 608 | 20 |
 | `EXPERIENCE` | 416 | 308 | 608 | 20 |
-| Rows 1 to 4 | 416 | 352, 528, 600, 672 | 608 | 152, 48, 48, 48 |
-| Text block | 480 | row top + 2 | - | - |
+| Rows 1 to 4 | 416 | 352, 488, 560, 632 | 608 | 112, 48, 48, 48 |
+| Single-position text block (rows 2 to 4) | 480 | row top + 2 | - | - |
+| ABS logo center | 440 | 374 | - | - |
+| ABS dot centers | 440 | 418 and 454 | - | - |
+| ABS dates | right edge 1024 | center y 418 and 454 | - | 20 each |
 
-ABS row (row 1) is 152px: a 44px header, 12px, then two 40px positions with 16px between them.
-Logo center, company center, and dot centers each line up exactly (see section 5).
+ABS row (row 1) is 112px when both roles fit on one line: a 44px header, 12px, then two 20px
+positions with 16px between them. The group grows when a role wraps on a narrow viewport. Logo center
+and company center line up, and each dot centers on its role text block (see section 5).
 
 | Link | x | width |
 | --- | ---: | ---: |
@@ -87,13 +89,14 @@ Logo center, company center, and dot centers each line up exactly (see section 5
 | Name | 24 | 102.06 | 255.51 | 35.88 |
 | Link row | 24 | 208 | 342 | 20 |
 | `EXPERIENCE` | 24 | 308 | 342 | 20 |
-| Rows 1 to 4 | 24 | 352, 528, 600, 672 | 342 | 152, 48, 48, 48 |
+| Rows 1 to 4 | 24 | 352, 508, 580, 652 | 342 | 132, 48, 48, 48 |
 | ABS header (row 1) | 24 | 352 | 342 | 44 |
 | ABS logo (row 1) | 24 | 352 (center y 374) | 48 | 44 |
-| ABS dots (row 1) | center x 48 | 418 and 474 | 8 | 8 each |
+| ABS dots (row 1) | center x 48 | 428 and 474 | 8 | 8 each |
+| ABS role text area (row 1) | 88 | 408 and 464 | 278 | 40 and 20 |
+| ABS dates (row 1) | right edge 366 | center y 428 and 474 | - | 20 each |
 | Logo slot (rows 2 to 4) | 24 | row top + 2 | 48 | 44 |
 | Text block (rows 2 to 4) | 88 | row top + 2 | 278 | - |
-| ABS roles (row 1) | 88 | 408 and 464 | 278 | 20 each |
 
 320px viewport (content `x=24`, 272px wide):
 
@@ -104,6 +107,9 @@ Logo center, company center, and dot centers each line up exactly (see section 5
 | Link row | 24 to 212.68 | 208 | - | 20 |
 | Rows 1 to 4 | 24 | 352, 528, 600, 692 | 272 | 152, 48, 68, 48 |
 | Text block | 88 | row top + 2 | 208 | - |
+| ABS positions (row 1) | 88 | 408 and 484 | 208 | 60 and 20 |
+| ABS dots (row 1) | center x 48 | 438 and 494 | 8 | 8 each |
+| ABS dates (row 1) | right edge 296 | center y 438 and 494 | - | 20 each |
 
 `document.documentElement.scrollWidth` equals the viewport width at 320, 390, 768, and 1440.
 
@@ -166,17 +172,21 @@ earlier experiments:
 
 - A header row, 44px tall, flex with `align-items: center`: the logo slot (48 × 44) and the company
   `h3` (24px line). The logo and the company line share one center line (y = 22 from the header top).
-- 12px below the header, then a timeline `ol`. Each position is 40px (role 20px, date 20px) and
-  positions are 16px apart. Position text starts at x = 64 (48px logo slot + 16px gap), the same as the
-  company name.
-- One dot per position: 8px circle, centered on the logo's center line (x = 24 in the logo slot), with
-  its center 20px below the top of its position, the middle of the title and date together.
-- A 2px line joins the dots, centered on the same x, from the first dot's center to the last dot's
-  center. The last position has no line below it.
+- 12px below the header, then a timeline `ol`. Positions are 16px apart. Each role and date share a
+  centered line; the role can wrap, while the date stays on one line at the right edge shared by the
+  dates in the other rows. Position text starts at x = 64 (48px logo slot + 16px gap), the same as
+  the company name.
+- One dot per position: 8px circle, centered on the logo's center line (x = 24 in the logo slot) and
+  on the vertical center of the role's line box. This keeps the dot centered on the job title when
+  the title wraps.
+- A 2px line joins the dot centers on the same x. Its segments meet in the middle of the 16px gap and
+  adapt to the height of wrapped role text. The last position has no line below it.
 - Role: 14px/20px, weight 500, primary color. Date: 14px/20px, weight 400, muted color. No location,
   duration, or skills.
 - Below 360px the header shows the `shortCompany` label (`ABS`). From 360px up it shows the full name.
-- The group is 152px tall. The next row starts 24px below it.
+- At 768px and 1440px, both role lines fit on one line and the group is 112px tall. At 390px the
+  first role wraps to two lines and the group is 132px tall. At 320px it wraps to three lines and the
+  group is 152px tall. The next row starts 24px below the group.
 
 ## 6. Logos
 

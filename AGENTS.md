@@ -34,6 +34,7 @@ Structure:
   extra links, or extra sections.
 - Education, skills, achievements, and highlights stay as data only. Do not render them to make the
   site look complete. A new section is a product decision: stop and ask.
+- The 404 page includes the shared theme toggle in a 48px header, aligned to the right.
 - The name is a plain, static, selectable server-rendered `h1` in Geist Pixel Square. Nothing moves
   except the theme switch and hover colors.
 - Keep both light and dark themes working.

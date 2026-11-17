@@ -3,6 +3,7 @@
 	"files": {
 		"includes": [
 			"**",
+			"!.claude/worktrees",
 			"!node_modules",
 			"!.wrangler",
 			"!.next",

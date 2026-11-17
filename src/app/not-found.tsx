@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import Link from "next/link";
 
 import { mutedLink } from "@/components/link-style";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 // Source Serif 4 Semibold, subset to "0" and "4" (1.4 KB). A free stand-in for Larish Neue. Renamed
 // because subsetting counts as a modification under the font's Reserved Font Name.
@@ -24,6 +25,9 @@ export const metadata: Metadata = {
 export default function NotFound() {
 	return (
 		<>
+			<header className="mb-16 flex h-12 items-center justify-end">
+				<ThemeToggle />
+			</header>
 			<h1
 				className={`${serif404.className} text-[clamp(8rem,42vw,12rem)] leading-none tracking-tight text-gray-900 dark:text-gray-100`}
 			>

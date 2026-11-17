@@ -252,7 +252,8 @@ characters, download a new subset with `&text=` set to every character needed.
 ## 10. Accessibility
 
 - One `h1`, one `h2`, one `h3` per experience. The experience list is a real `ul`.
-- Tab order: theme toggle, `LinkedIn`, `GitHub`, `Contact`.
+- Main page tab order: theme toggle, `LinkedIn`, `GitHub`, `Contact`. On the 404 page, the toggle
+  comes before `Back home`.
 - Text contrast meets WCAG AA at the grays above.
 - The page works without JavaScript. Only the theme toggle needs it.
 
@@ -261,12 +262,14 @@ characters, download a new subset with `&text=` set to every character needed.
 `src/app/not-found.tsx` is a server component using the same column, padding, and colors as the
 main page, in both themes. From top to bottom:
 
+- A 48px header with the shared theme toggle aligned right, followed by 64px of space.
 - `404` as the `h1`, in `Serif404-Semibold` (section 9), `clamp(8rem, 42vw, 12rem)` (192px on
   desktop, about 134px at 320), `line-height: 1`, tight tracking, primary text color.
 - 24px below: `I’m sorry, that page is in another castle!` in Geist 16px/24px, secondary color.
 - 16px below: the `Back home` link to `/`, styled like the profile links.
 
-No header, toggle, link row, images, or animation. It builds to `/_not-found` and is served as `out/404.html`.
+No link row, images, or animation. The toggle uses the same theme setting and behavior as the main
+page. It builds to `/_not-found` and is served as `out/404.html`.
 
 ## 12. Build output
 
